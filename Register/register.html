@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>EMIS login</title>
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 <body style="background-color: #004c66;">
     <main>
@@ -12,11 +13,23 @@
             <img src="/images/logo.png" alt="EMIS logo" width="200px">
             <div class="loginDiv">
                 <form action="">
-                    <label for="">Email</label>
-                    <input type="email" name="" id="" name="Useremail" required>
-                    <label for="" >Password</label>
-                    <input type="password" name="" id="" name="Userpassword" required>
-                    <button type="submit">Sign Up</button>
+                    <!-- Email -->
+                    <label for="Useremail">Email</label>
+                    <input type="email"  name="Useremail" required>
+                    <!-- Create Password -->
+                    <label for="Userpassword">Password</label>
+                    <input type="password" id="" name="Userpassword" required>
+                    <!-- Confirm Password -->
+                    <label for="Confirmpassword" >Confirm Password</label>
+                    <input type="password" id="" name="Confirmpassword" required>
+                    <!-- Institution type -->
+                    <label for="institutionType">Institution type</label>
+                    <select name="institutionType" id="" class="institutionType">
+                        <option value="i_school">Secondary School</option>                        <option value="s_school">Secondary School</option>
+                        <option value="p_school">Primary School</option>
+                        <option value="k_school">Kindergaten School</option>
+                    </select>
+                    <button type="submit">Sign In</button>
                 </form>
                 <h4>Already on EMIS? <a href="/index.html">Log into your account</a></h4>
             </div>
