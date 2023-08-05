@@ -72,7 +72,7 @@ main {
 
 /* main body css */
 .mainBody {
-  background-color: tomato;
+  background-color: #f0f0f0;
   width: 80%;
 }
 .headerDiv {
@@ -85,9 +85,9 @@ main {
 }
 .academicyear {
   width: 12%;
-  height: 3vh;
+  height: 4vh;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: light;
   display: flex;
   color: #f0f8ff;
   align-items: center;
@@ -95,6 +95,13 @@ main {
   border-radius: 5px;
   border: 4px solid #c3d3dae5;
   background-color: #228eb3;
+}
+.Useraccount {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
 }
 .UseraccountDetailsInitials {
   border: none;
@@ -104,6 +111,8 @@ main {
   color: #c3d3da;
   background-color: #000c36;
 }
-.Useraccount {
-  width: 12%;
+.UseraccountDetails {
+  font-family: inherit;
+  font-size: 14px;
+  text-align: center;
 }
