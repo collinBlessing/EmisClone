@@ -233,17 +233,94 @@ a {
 table {
   width: 100%;
   border: none;
-  border-collapse:collapse ;
+  border-collapse: collapse;
 }
-thead{
+thead {
   color: aliceblue;
   font-size: 0.8em;
   background-color: rgb(29, 29, 29);
   border: none;
   height: 5vh;
 }
-tr{
+tr {
   border-top: 1px solid rgb(210, 210, 210);
   height: 7vh;
   text-align: center;
+}
+.uploadSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+/* for emis data upload */
+.container {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+.learner-form {
+  width: 60%;
+}
+.choose-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.preview {
+  margin-top: 20px;
+}
+
+#previewImage {
+  max-width: 100%;
+  max-height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.learner-form {
+  /* max-width: 600px; */
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  /* font-weight: bold; */
+  font-size: 14px;
+  padding-bottom: 15px;
+  color: #010816;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+select,
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background-color: #e5eef7;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

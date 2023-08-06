@@ -1,316 +1,155 @@
-<!-- {% load static %} -->
+{% extends 'main.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
-    <head5>
+    <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Institution Dashboard | Emis chrone</title>
         <!-- <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" /> -->
-        <link rel="stylesheet" href="/EMIS_chrone/static/css/dashboard.css" />
-        <link rel="favicon" type="image/png" href="/EMIS_chrone/static/images/icons8-shield-60.png">
-    </head5>
+        <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+    </head>
 
     <body>
-        <header></header>
         <main>
-            <!-- create main body -->
-            <!-- side bar  body-->
-            <div class="sidebarDiv">
-                <!-- Emis logo diiv in the side bar -->
-                <div class="emislogo">
-                    <!-- emis icon -->
-                    <img src="/EMIS_chrone/static/images/logo.png" alt="" height="60%">
-                    <!-- menu icon -->
-                    <img src="/EMIS_chrone/static/images/icons8-menu-30.png" alt="" height="30%">
+            {% block content %}
+            <div class="dataDiv">
+                <div class="DataDiv">
+                    <div class="generalInformation">
+                        <div class="infoTable">
+                            <div class="first">
+                                <img src="{% static 'images/icons8-person-50.png'%}" height="40" alt="">
+                            </div>
+                            <div class="middle">
+                                <span style="font-size: 30px;">22</span>
+                                <br>
+                                LEARNERS
+                            </div>
+                            <div class="Last">
+                                <div style="border-bottom: 1px solid;">
+                                    <span style="font-size: 15px;">22</span>
+                                    <br>
+                                    MALE
+                                </div>
+                                <div>
+                                    <span style="font-size: 15px;">22</span>
+                                    <br>
+                                    FEMALE
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infoTable">
+                            <div class="first">
+                                <img src="{% static 'images/icons8-person-50.png'%}" height="40" alt="">
+                            </div>
+                            <div class="middle">
+                                <span style="font-size: 30px;">22</span>
+                                <br>
+                                TEACHING STAFF
+                            </div>
+                            <div class="Last">
+                                <div style="border-bottom: 1px solid;">
+                                    <span style="font-size: 15px;">22</span>
+                                    <br>
+                                    MALE
+                                </div>
+                                <div>
+                                    <span style="font-size: 15px;">22</span>
+                                    <br>
+                                    FEMALE
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infoTable">
+                            <div class="first">
+                                <img src="{% static 'images/icons8-person-50.png'%}" height="40" alt="">
+                            </div>
+                            <div class="middle">
+                                <span style="font-size: 30px;">22</span>
+                                <br>
+                                SUPPORT STAFF
+                            </div>
+                            <div class="Last">
+                                <div style="border-bottom: 1px solid;">
+                                    <span style="font-size: 15px;">22</span>
+                                    <br>
+                                    MALE
+                                </div>
+                                <div>
+                                    <span style="font-size: 15px;">22</span>
+                                    <br>
+                                    FEMALE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="graphInformation">
+                        <div class="enrollment"></div>
+                        <div class="ninisDiv">
+                            <div class="ninis">
+                                <div style="height: 50%;">
+                                    <img src="{% static 'images/icons8-bar-graph-53.png' %}" alt="" height="100%">
+                                </div>
+                                <div>
+                                    <span style="font-size: 23px;font-weight: bold;color: #000c36;">44</span>
+                                    <br>
+                                    Learners With NINS
+                                </div>
+                            </div>
+                            <div class="ninis">
+                                <div style="height: 50%;">
+                                    <img src="{% static 'images/icons8-bar-graph-53 (pink).png'%}" alt="" height="100%">
+                                </div>
+                                <div>
+                                    <span style="font-size: 23px;font-weight: bold;color: #000c36;">45</span>
+                                    <br>
+                                    Learners Without NINS
+                                </div>
+                            </div>
 
-                </div>
-                <!-- EMis list in the sidebar -->
-                <div class="mainsidebarlist">
-                    <a href="">
-                        <!-- list item -->
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-dashboard-32.png" alt="" width="6%">
-                            EMIS Dashboard
                         </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-upload-to-cloud-64.png" alt="" width="6%">
-                            EMIS DATAUPLOAD
-                        </div>
-                    </a>
-                    <!-- side bar list heading -->
-                    <h5 class="mainsidebarlistHeadings">Manage Emis Data</h5>
+                    </div>
+                    <div class="recentlyAddedLearners">
 
-
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-settings-50.png" alt="" width="6%">
-                            My Institution
-                        </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-license-80.png" alt="" width="6%">
-                            License and Registration
-                        </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-book-50.png" alt="" width="6%">
-                            Learners
-                        </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-human-91.png" alt="" width="6%">
-                            Human Resource
-                        </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-infrastructure-64.png" alt="" width="6%">
-                            Infrastructure
-                        </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-learning-50.png" alt="" width="6%">
-                            Learning and Playing Materials
-                        </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-paint-50.png" alt="" width="6%">
-                            Facilities
-                        </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-weightlifting-48.png" alt="" width="6%">
-                            P.E & Sports
-                        </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-stack-of-coins-48.png" alt="" width="6%">
-                            Finance
-                        </div>
-                    </a>
-
-                    <!-- side bar list heading -->
-                    <h5 class="mainsidebarlistHeadings">UTILITIES</h5>
-
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-stack-of-coins-48.png" alt="" width="6%">
-                            Publications
-                        </div>
-                    </a>
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-stack-of-coins-48.png" alt="" width="6%">
-                            EMIS Notices
-                        </div>
-                    </a>
-                    <!-- side bar list heading -->
-                    <h5 class="mainsidebarlistHeadings">HELP-CENTER</h5>
-
-                    <!-- list item -->
-                    <a href="">
-                        <div>
-                            <img src="/EMIS_chrone/static/images/icons8-stack-of-coins-48.png" alt="" width="6%">
-                            EMIS Support
-                        </div>
-                    </a>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">LEARNER</th>
+                                    <th scope="col">LIN</th>
+                                    <th scope="col">CLASS</th>
+                                    <th scope="col">NATIONALITY</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><img src="{% static 'images/icons8-person-50.png'%}" width="40"></th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="{% static 'images/icons8-person-50.png'%}" width="40"></th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="{% static 'images/icons8-person-50.png'%}" width="40"></th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <!-- main body with header embedded -->
-            <div class="mainBody">
-                <!-- creating header -->
-                <div class="headerDiv">
-                    <div class="academicyear">
-                        <img src="/EMIS_chrone/static/images/icons8-timeline-week-48.png" height="70%" alt="">
-                        ACADEMIC YEAR 2023
-                    </div>
-                    <div class="Useraccount">
-                        <div class="UseraccountDetailsInitials">AA</div>
-                        <div class="UseraccountDetails">
-                            <span style="color: black;">Contact Person Account</span>
-                            <br>
-                            <span style="color: rgb(0, 1, 56);font-weight: bold;">ATWINE ASSUMPTA</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- creating main -->
-                <div class="mainBodyDiv">
-                    <div class="welcomeDiv">
-                        <!-- welcome note -->
-                        <div class="welcome">
-                            <span style="font-size: 25px;font-weight: bold;">Welcome !</span>
-                            <br><br>
-                            A quick summmary of your Institution
-                        </div>
-                        <!-- data upload button -->
-                        <div class="academicyear" style="background-color: #000c36;">
-                            <img src="/EMIS_chrone/static/images/icons8-arrow-30.png" height="50%" alt="">
-                            <a href="">
-                                GO TO EMIS DATA UPLOAD
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="dataDiv">
-                        <div class="DataDiv">
-                            <div class="generalInformation">
-                                <div class="infoTable">
-                                    <div class="first">
-                                        <img src="/EMIS_chrone/static/images/icons8-person-50.png" height="40" alt="">
-                                    </div>
-                                    <div class="middle">
-                                        <span style="font-size: 30px;">22</span>
-                                        <br>
-                                        LEARNERS
-                                    </div>
-                                    <div class="Last">
-                                        <div style="border-bottom: 1px solid;">
-                                            <span style="font-size: 15px;">22</span>
-                                            <br>
-                                            MALE
-                                        </div>
-                                        <div>
-                                            <span style="font-size: 15px;">22</span>
-                                            <br>
-                                            FEMALE
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="infoTable">
-                                    <div class="first">
-                                        <img src="/EMIS_chrone/static/images/icons8-person-50.png" height="40" alt="">
-                                    </div>
-                                    <div class="middle">
-                                        <span style="font-size: 30px;">22</span>
-                                        <br>
-                                        TEACHING STAFF
-                                    </div>
-                                    <div class="Last">
-                                        <div style="border-bottom: 1px solid;">
-                                            <span style="font-size: 15px;">22</span>
-                                            <br>
-                                            MALE
-                                        </div>
-                                        <div>
-                                            <span style="font-size: 15px;">22</span>
-                                            <br>
-                                            FEMALE
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="infoTable">
-                                    <div class="first">
-                                        <img src="/EMIS_chrone/static/images/icons8-person-50.png" height="40" alt="">
-                                    </div>
-                                    <div class="middle">
-                                        <span style="font-size: 30px;">22</span>
-                                        <br>
-                                        SUPPORT STAFF
-                                    </div>
-                                    <div class="Last">
-                                        <div style="border-bottom: 1px solid;">
-                                            <span style="font-size: 15px;">22</span>
-                                            <br>
-                                            MALE
-                                        </div>
-                                        <div>
-                                            <span style="font-size: 15px;">22</span>
-                                            <br>
-                                            FEMALE
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="graphInformation">
-                                <div class="enrollment"></div>
-                                <div class="ninisDiv">
-                                    <div class="ninis">
-                                        <div style="height: 50%;">
-                                            <img src="/EMIS_chrone/static/images/icons8-bar-graph-53.png" alt=""
-                                                height="100%">
-                                        </div>
-                                        <div>
-                                            <span style="font-size: 23px;font-weight: bold;color: #000c36;">44</span>
-                                            <br>
-                                            Learners With NINS
-                                        </div>
-                                    </div>
-                                    <div class="ninis">
-                                        <div style="height: 50%;">
-                                            <img src="/EMIS_chrone/static/images/icons8-bar-graph-53 (pink).png" alt=""
-                                                height="100%">
-                                        </div>
-                                        <div>
-                                            <span style="font-size: 23px;font-weight: bold;color: #000c36;">45</span>
-                                            <br>
-                                            Learners Without NINS
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="recentlyAddedLearners">
-
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">LEARNER</th>
-                                            <th scope="col">LIN</th>
-                                            <th scope="col">CLASS</th>
-                                            <th scope="col">NATIONALITY</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row"><img src="/EMIS_chrone/static/images/icons8-person-50.png" width="40"></th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><img src="/EMIS_chrone/static/images/icons8-person-50.png" width="40"></th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><img src="/EMIS_chrone/static/images/icons8-person-50.png" width="40"></th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <footer style="text-align: center;opacity: 0.6;">
-                    <hr>
-                    @EMIS chrone (For Educational purposes only) 2023 Nahurira Collin Blessing
-                </footer>
+            {% endblock %}
+            <footer style="text-align: center;opacity: 0.6;">
+                <hr>
+                @EMIS chrone (For Educational purposes only) 2023 Nahurira Collin Blessing
+            </footer>
             </div>
         </main>
 
