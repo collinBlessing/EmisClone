@@ -242,4 +242,6 @@ thead{
 }
 tr{
   border-top: 1px solid rgb(210, 210, 210);
+  height: 7vh;
+  text-align: center;
 }
