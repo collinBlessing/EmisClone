@@ -1,0 +1,278 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Institution Dashboard | Emis chrone</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" /> -->
+    <link rel="stylesheet" href="/EMIS_chrone/static/css/dashboard.css" />
+    <link rel="stylesheet" href="/EMIS_chrone/static/css/emisdataupload.css" />
+    <link rel="favicon" type="image/png" href="/EMIS_chrone/static/images/icons8-shield-60.png" />
+    <script src="/EMIS_chrone/static/js/emisdataupload.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- create main body -->
+      <!-- side bar  body-->
+      <div class="sidebarDiv">
+        <!-- Emis logo diiv in the side bar -->
+        <div class="emislogo">
+          <!-- emis icon -->
+          <img src="/EMIS_chrone/static/images/logo.png" alt="" height="60%" />
+          <!-- menu icon -->
+          <img src="/EMIS_chrone/static/images/icons8-menu-30.png" alt="" height="30%" />
+        </div>
+        <!-- EMis list in the sidebar -->
+        <div class="mainsidebarlist">
+          <a href="">
+            <!-- list item -->
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-dashboard-32.png" alt="" width="6%" />
+              EMIS Dashboard
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-upload-to-cloud-64.png" alt="" width="6%" />
+              EMIS DATAUPLOAD
+            </div>
+          </a>
+          <!-- side bar list heading -->
+          <h5 class="mainsidebarlistHeadings">Manage Emis Data</h5>
+
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-settings-50.png" alt="" width="6%" />
+              My Institution
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-license-80.png" alt="" width="6%" />
+              License and Registration
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-book-50.png" alt="" width="6%" />
+              Learners
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-human-91.png" alt="" width="6%" />
+              Human Resource
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-infrastructure-64.png" alt="" width="6%" />
+              Infrastructure
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-learning-50.png" alt="" width="6%" />
+              Learning and Playing Materials
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-paint-50.png" alt="" width="6%" />
+              Facilities
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-weightlifting-48.png" alt="" width="6%" />
+              P.E & Sports
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-stack-of-coins-48.png" alt="" width="6%" />
+              Finance
+            </div>
+          </a>
+
+          <!-- side bar list heading -->
+          <h5 class="mainsidebarlistHeadings">UTILITIES</h5>
+
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-stack-of-coins-48.png" alt="" width="6%" />
+              Publications
+            </div>
+          </a>
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-stack-of-coins-48.png" alt="" width="6%" />
+              EMIS Notices
+            </div>
+          </a>
+          <!-- side bar list heading -->
+          <h5 class="mainsidebarlistHeadings">HELP-CENTER</h5>
+
+          <!-- list item -->
+          <a href="">
+            <div>
+              <img src="/EMIS_chrone/static/images/icons8-stack-of-coins-48.png" alt="" width="6%" />
+              EMIS Support
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- main body with header embedded -->
+      <div class="mainBody">
+        <!-- creating header -->
+        <div class="headerDiv">
+          <div class="academicyear">
+            <img src="/EMIS_chrone/static/images/icons8-timeline-week-48.png" height="70%" alt="" />
+            ACADEMIC YEAR 2023
+          </div>
+          <div class="Useraccount">
+            <div class="UseraccountDetailsInitials">AA</div>
+            <div class="UseraccountDetails">
+              <span style="color: black">Contact Person Account</span>
+              <br />
+              <span style="color: rgb(0, 1, 56); font-weight: bold">ATWINE ASSUMPTA</span>
+            </div>
+          </div>
+        </div>
+        <!-- creating main -->
+        <div class="mainBodyDiv">
+          <div class="welcomeDiv">
+            <!-- welcome note -->
+            <div class="welcome">
+              <span style="font-size: 25px; font-weight: bold">Welcome !</span>
+              <br /><br />
+              A quick summmary of your Institution
+            </div>
+            <!-- data upload button -->
+            <div class="academicyear" style="background-color: #000c36">
+              <img src="/EMIS_chrone/static/images/icons8-arrow-30.png" height="50%" alt="" />
+              <a href=""> GO TO EMIS DATA UPLOAD </a>
+            </div>
+          </div>
+          <!-- Upload section -->
+          <div class="uploadSection">
+
+            <div class="container">
+              <label for="">Add Photo</label>
+              <div class="preview" style="height: 200px; width: 200px; border: 1px solid #b3bfe9">
+                <img id="previewImage" src="" />
+              </div>
+              <input type="file" id="chooseFile" accept="image/*" style="visibility: collapse" />
+              <label for="chooseFile" class="choose-button">Choose Photo</label>
+            </div>
+            <script src="/EMIS_chrone/static/js/emisdataupload.js"></script>
+
+            <div class="learner-form">
+              <form>
+                <label for="nin">Does this learner have a NIN?</label><br />
+                <input type="radio" id="yesNIN" name="nin" value="yes" />
+                <label for="yesNIN">Yes</label>
+                <input type="radio" id="noNIN" name="nin" value="no" checked/>
+                <label for="noNIN">No</label><br /><br />
+
+                <label for="refugee">Is this learner a refugee?</label><br />
+                <input type="radio" id="yesRefugee" name="refugee" value="yes" />
+                <label for="yesRefugee">Yes</label>
+                <input type="radio" id="noRefugee" name="refugee" value="no" checked/>
+                <label for="noRefugee">No</label><br /><br />
+
+                <label for="nationality">Learner nationality:</label><br />
+                <select id="nationality" name="nationality" required>
+                  <option value="" disabled selected>Select a nationality</option>
+                  <optgroup label="African countries">
+                    <option value="Uganda" selected>Uganda</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Botswana">Botswana</option>
+                    <option value="Burkina Faso">Burkina Faso</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Cabo Verde">Cabo Verde</option>
+                    <option value="Cameroon">Cameroon</option>
+                    <option value="Central African Republic">Central African Republic</option>
+                    <option value="Chad">Chad</option>
+                    <option value="Comoros">Comoros</option>
+                    <option value="Congo">Congo</option>
+                    <option value="Djibouti">Djibouti</option>
+                    <option value="Egypt">Egypt</option>
+                    <!-- Add more African countries here -->
+                  </optgroup>
+                </select><br /><br />
+
+                <label for="firstName">First name *</label>
+                <input type="text" id="firstName" name="firstName" required /><br />
+
+                <label for="surname">Surname *</label>
+                <input type="text" id="surname" name="surname" required /><br />
+
+                <label for="otherNames">Other names</label>
+                <input type="text" id="otherNames" name="otherNames" /><br />
+
+                <label for="dateOfBirth">Date of birth</label >
+                <input type="date" id="dateOfBirth" name="dateOfBirth" required/><br />
+
+                <label>Gender</label ><br />
+                <input type="radio" id="male" name="gender" value="male" required/>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">Female</label><br /><br />
+
+                <label for="isOrphan">Is learner an orphan?</label><br />
+                <input type="radio" id="yesOrphan" name="isOrphan" value="yes" />
+                <label for="yesOrphan">Yes</label>
+                <input type="radio" id="noOrphan" name="isOrphan" value="no" checked/>
+                <label for="noOrphan" >No</label><br /><br />
+
+                <label for="districtOfBirth">District of birth</label><br />
+                <select id="districtOfBirth" name="districtOfBirth" required>
+                  <option value="" disabled selected>Select a district</option>
+                  <optgroup label="Districts in Uganda">
+                    <option value="Kampala">Kampala</option>
+                    <option value="Jinja">Jinja</option>
+                    <option value="Gulu">Gulu</option>
+                    <option value="Mbarara">Mbarara</option>
+                    <option value="Mbale">Mbale</option>
+                    <option value="Arua">Arua</option>
+                    <option value="Masaka">Masaka</option>
+                    <option value="Lira">Lira</option>
+                    <option value="Entebbe">Entebbe</option>
+                    <option value="Fort Portal">Fort Portal</option>
+                    <!-- Add more districts in Uganda here -->
+                  </optgroup>
+                </select><br /><br />
+
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <footer style="text-align: center; opacity: 0.6">
+          <hr />
+          @EMIS chrone (For Educational purposes only) 2023 Nahurira Collin
+          Blessing
+        </footer>
+      </div>
+    </main>
+  </body>
+
+</html>
