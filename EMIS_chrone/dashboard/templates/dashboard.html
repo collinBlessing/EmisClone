@@ -117,29 +117,20 @@
                                 <tr>
                                     <th scope="col">LEARNER</th>
                                     <th scope="col">LIN</th>
-                                    <th scope="col">CLASS</th>
+                                    <th scope="col">NAME</th>
                                     <th scope="col">NATIONALITY</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for p in i %}
                                 <tr>
-                                    <th scope="row"><img src="{% static 'images/icons8-person-50.png'%}" width="40"></th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
+                                    <th ><img src="{% static '{{p.photo}}' %}" width="40"></th>
+                                    <td>{{p.LIN}}</td>
+                                    <td>{{p.firstName}} {{p.sirname}}</td>
+                                    <td>{{p.nationality}}</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row"><img src="{% static 'images/icons8-person-50.png'%}" width="40"></th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><img src="{% static 'images/icons8-person-50.png'%}" width="40"></th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
+                                {% endfor %}
+
                             </tbody>
                         </table>
                     </div>

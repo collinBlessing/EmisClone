@@ -13,26 +13,23 @@
     <main>
       {% block content %}
           <!-- Upload section -->
+          
           <div class="uploadSection">
 
             <div class="container">
-              <label for="">Add Photo</label>
               <div class="preview" style="height: 200px; width: 200px; border: 1px solid #b3bfe9">
                 <img id="previewImage" src="" />
               </div>
               <input type="file" id="chooseFile" accept="image/*" style="visibility: collapse" />
-              <label for="chooseFile" class="choose-button">Choose Photo</label>
             </div>
             <script src="{% static 'js/emisdataupload.js' %}"></script>
-
             <div class="learner-form">
-              <form>
-                <label for="nin">Does this learner have a NIN?</label><br />
-                <input type="radio" id="yesNIN" name="nin" value="yes" />
-                <label for="yesNIN">Yes</label>
-                <input type="radio" id="noNIN" name="nin" value="no" checked/>
-                <label for="noNIN">No</label><br /><br />
 
+
+              <form method="POST" action="{% url 'upload_data' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="learner_photo" id="chooseFile" accept="image/*" style="display: block;"/>
+                  
                 <label for="refugee">Is this learner a refugee?</label><br />
                 <input type="radio" id="yesRefugee" name="refugee" value="yes" />
                 <label for="yesRefugee">Yes</label>
@@ -65,8 +62,8 @@
                 <label for="firstName">First name *</label>
                 <input type="text" id="firstName" name="firstName" required /><br />
 
-                <label for="surname">Surname *</label>
-                <input type="text" id="surname" name="surname" required /><br />
+                <label for="sirname">Sirname *</label>
+                <input type="text" id="sirname" name="sirname" required /><br />
 
                 <label for="otherNames">Other names</label>
                 <input type="text" id="otherNames" name="otherNames" /><br />
@@ -74,7 +71,7 @@
                 <label for="dateOfBirth">Date of birth</label >
                 <input type="date" id="dateOfBirth" name="dateOfBirth" required/><br />
 
-                <label>Gender</label ><br />
+                <label>Gender</label><br />
                 <input type="radio" id="male" name="gender" value="male" required/>
                 <label for="male">Male</label>
                 <input type="radio" id="female" name="gender" value="female" />
@@ -86,7 +83,7 @@
                 <input type="radio" id="noOrphan" name="isOrphan" value="no" checked/>
                 <label for="noOrphan" >No</label><br /><br />
 
-                <label for="districtOfBirth">District of birth</label><br />
+                <label for=" ">District of birth</label><br />
                 <select id="districtOfBirth" name="districtOfBirth" required>
                   <option value="" disabled selected>Select a district</option>
                   <optgroup label="Districts in Uganda">
