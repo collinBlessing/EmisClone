@@ -1,6 +1,7 @@
 import random
 from django.shortcuts import render
 from .models import learners
+from django.contrib import messages
 
 # Create your views here.
 
@@ -25,6 +26,13 @@ def generate_lin_number():
 def UploadData(request):
     if request.method == "POST":
         LIN = generate_lin_number()
+        # check_for_NINS = learners.objects.all()
+        # for everyNin in check_for_NINS:
+        #     if everyNin == LIN:
+        #         LIN = generate_lin_number()
+        #     else:
+        #         LIN = LIN
+
         firstName = request.POST["firstName"]
         sirname = request.POST["sirname"]
         otherNames = request.POST["otherNames"]
@@ -50,7 +58,8 @@ def UploadData(request):
             photo=photo,
         )
         new_student.save()
-        print("done")
-        return render(request, "emisdataupload.html", {"result_message": "success"})
+        messages.success(request, "Learner added successfully")
+        return render(request, "emisdataupload.html")
     else:
-        return render(request, "emisdataupload.html", {"result_message": "error"})
+        messages.error(request, "An Error occured while submitting data")
+        return render(request, "emisdataupload.html")

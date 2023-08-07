@@ -22,18 +22,18 @@
                                 <img src="{% static 'images/icons8-person-50.png'%}" height="40" alt="">
                             </div>
                             <div class="middle">
-                                <span style="font-size: 30px;">22</span>
+                                <span style="font-size: 30px;">{{learnerCount}}</span>
                                 <br>
                                 LEARNERS
                             </div>
                             <div class="Last">
                                 <div style="border-bottom: 1px solid;">
-                                    <span style="font-size: 15px;">22</span>
+                                    <span style="font-size: 15px;">{{learner_maleCount}}</span>
                                     <br>
                                     MALE
                                 </div>
                                 <div>
-                                    <span style="font-size: 15px;">22</span>
+                                    <span style="font-size: 15px;">{{learner_femaleCount}}</span>
                                     <br>
                                     FEMALE
                                 </div>
@@ -122,12 +122,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for p in i %}
+                                {% for learner in learnerFetch %}
                                 <tr>
-                                    <th ><img src="{% static '{{p.photo}}' %}" width="40"></th>
-                                    <td>{{p.LIN}}</td>
-                                    <td>{{p.firstName}} {{p.sirname}}</td>
-                                    <td>{{p.nationality}}</td>
+                                    <th ><img src="{{learner.photo}}" width="40"></th>
+                                    <td>{{learner.LIN}}</td>
+                                    <td>{{learner.firstName}} {{learner.sirname}}</td>
+                                    <td>{{learner.nationality}}</td>
                                 </tr>
                                 {% endfor %}
 
