@@ -30,7 +30,7 @@ def UploadData(request):
         nationality_initial = nationality[0]
         LIN = generate_lin_number(nationality_initial)
         # check_for_NINS = learners.objects.all()
-        for everyNin in Learners.objects.all():
+        for everyNin in Learners.objects.values_list('LIN'):
             while LIN == everyNin:
                 LIN = generate_lin_number(nationality_initial)
 
