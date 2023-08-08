@@ -11,8 +11,8 @@ def emisdataupload(request):
 
 
 # Generate student lin number
-def generate_lin_number():
-    lin_number = "U"
+def generate_lin_number(initial):
+    lin_number = initial
     for _ in range(9):
         lin_number += str(random.randint(0, 9))
     return lin_number
@@ -25,13 +25,14 @@ def generate_lin_number():
 
 def UploadData(request):
     if request.method == "POST":
-        LIN = generate_lin_number()
+        nationality = request.POST["nationality"]
+        # pass nationality initial to the auto generate lin function
+        nationality_initial = nationality[0]
+        LIN = generate_lin_number(nationality_initial)
         # check_for_NINS = learners.objects.all()
-        # for everyNin in check_for_NINS:
-        #     if everyNin == LIN:
-        #         LIN = generate_lin_number()
-        #     else:
-        #         LIN = LIN
+        for everyNin in Learners.objects.all():
+            while LIN == everyNin:
+                LIN = generate_lin_number(nationality_initial)
 
         firstName = request.POST["firstName"]
         sirname = request.POST["sirname"]
@@ -41,7 +42,6 @@ def UploadData(request):
         isOrphan = request.POST["isOrphan"]
         districtOfBirth = request.POST["districtOfBirth"]
         is_refugee = request.POST["refugee"]
-        nationality = request.POST["nationality"]
         photo = request.FILES.get("learner_photo", None)
 
         new_student = Learners(

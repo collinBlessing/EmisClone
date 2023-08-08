@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,22 +13,28 @@
   <body style="background-color: #004c66">
     <main>
       <div class="loginMainDiv">
-        <img
-          src="{% static 'images/logo.png' %}"
-          alt="EMIS logo"
-          width="200px"
-        />
+        <img src="{% static 'images/logo.png' %}" alt="EMIS logo" width="200px" />
         <div class="loginDiv">
           <form action="{% url 'registerUser' %}" method="POST">
             <!-- Email -->
             <label for="Useremail">Email</label>
             <input type="email" name="Useremail" required />
+            <!-- User first name -->
+            <label for="Useremail">First Name</label>
+            <input type="text" name="Useremail" required />
+            <!-- User lastname -->
+            <label for="Useremail">Last Name</label>
+            <input type="text" name="Useremail" required />
+
             <!-- Create Password -->
             <label for="Userpassword">Password</label>
             <input type="password" id="" name="Userpassword" required />
             <!-- Confirm Password -->
             <label for="Confirmpassword">Confirm Password</label>
             <input type="password" id="" name="Confirmpassword" required />
+            <!-- Institution Name -->
+            <label for="Useremail">School Name</label>
+            <input type="text" name="Useremail" required />
             <!-- Institution type -->
             <label for="institutionType">Institution type</label>
             <select name="institutionType" id="" class="institutionType">
@@ -45,4 +52,5 @@
     </main>
     <footer></footer>
   </body>
+
 </html>

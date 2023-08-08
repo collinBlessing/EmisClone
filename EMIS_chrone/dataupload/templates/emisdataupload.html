@@ -6,112 +6,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Institution Dashboard | Emis chrone</title>  
+    {% comment %} TITLE {% endcomment %}
+    <title>EMIS Dataupload | Emis chrone</title>
   </head>
 
   <body>
     <main>
-      
+
       {% block content %}
-          <!-- Upload section -->
-          
-          <div class="uploadSection">
+      <!-- Upload section -->
 
-            <div class="container">
-              <div class="preview" style="height: 200px; width: 200px; border: 1px solid #b3bfe9">
-                <img id="previewImage" src="" />
-              </div>
-              <input type="file" id="chooseFile" accept="image/*" style="visibility: collapse" />
+      <div class="uploadSection">
+        <div class="learner-form">
+
+          {% comment %}FORM FOR SUBMISSION {% endcomment %}
+          <form method="POST" action="{% url 'upload_data' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {% comment %} PREVIEW IMAGE {% endcomment %}
+            <div class="preview" style="height: fit-content; width: fit-content;">
+              <img id="previewImage" src="" />
             </div>
+            <input type="file" name="learner_photo" id="chooseFile" accept="image/*" style="display: block;" />
+            {% comment %} JAVASCRIPT {% endcomment %}
             <script src="{% static 'js/emisdataupload.js' %}"></script>
-            <div class="learner-form">
-
-
-              <form method="POST" action="{% url 'upload_data' %}" enctype="multipart/form-data">
-                {% csrf_token %}
-                <input type="file" name="learner_photo" id="chooseFile" accept="image/*" style="display: block;"/>
-                  
-                <label for="refugee">Is this learner a refugee?</label><br />
-                <input type="radio" id="yesRefugee" name="refugee" value="yes" />
-                <label for="yesRefugee">Yes</label>
-                <input type="radio" id="noRefugee" name="refugee" value="no" checked/>
-                <label for="noRefugee">No</label><br /><br />
-
-                <label for="nationality">Learner nationality:</label><br />
-                <select id="nationality" name="nationality" required>
-                  <option value="" disabled selected>Select a nationality</option>
-                  <optgroup label="African countries">
-                    <option value="Uganda" selected>Uganda</option>
-                    <option value="Algeria">Algeria</option>
-                    <option value="Angola">Angola</option>
-                    <option value="Benin">Benin</option>
-                    <option value="Botswana">Botswana</option>
-                    <option value="Burkina Faso">Burkina Faso</option>
-                    <option value="Burundi">Burundi</option>
-                    <option value="Cabo Verde">Cabo Verde</option>
-                    <option value="Cameroon">Cameroon</option>
-                    <option value="Central African Republic">Central African Republic</option>
-                    <option value="Chad">Chad</option>
-                    <option value="Comoros">Comoros</option>
-                    <option value="Congo">Congo</option>
-                    <option value="Djibouti">Djibouti</option>
-                    <option value="Egypt">Egypt</option>
-                    <!-- Add more African countries here -->
-                  </optgroup>
-                </select><br /><br />
-
-                <label for="firstName">First name *</label>
-                <input type="text" id="firstName" name="firstName" required /><br />
-
-                <label for="sirname">Sirname *</label>
-                <input type="text" id="sirname" name="sirname" required /><br />
-
-                <label for="otherNames">Other names</label>
-                <input type="text" id="otherNames" name="otherNames" /><br />
-
-                <label for="dateOfBirth">Date of birth</label >
-                <input type="date" id="dateOfBirth" name="dateOfBirth" required/><br />
-
-                <label>Gender</label><br />
-                <input type="radio" id="male" name="gender" value="male" required/>
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female" />
-                <label for="female">Female</label><br /><br />
-
-                <label for="isOrphan">Is learner an orphan?</label><br />
-                <input type="radio" id="yesOrphan" name="isOrphan" value="yes" />
-                <label for="yesOrphan">Yes</label>
-                <input type="radio" id="noOrphan" name="isOrphan" value="no" checked/>
-                <label for="noOrphan" >No</label><br /><br />
-
-                <label for=" ">District of birth</label><br />
-                <select id="districtOfBirth" name="districtOfBirth" required>
-                  <option value="" disabled selected>Select a district</option>
-                  <optgroup label="Districts in Uganda">
-                    <option value="Kampala">Kampala</option>
-                    <option value="Jinja">Jinja</option>
-                    <option value="Gulu">Gulu</option>
-                    <option value="Mbarara">Mbarara</option>
-                    <option value="Mbale">Mbale</option>
-                    <option value="Arua">Arua</option>
-                    <option value="Masaka">Masaka</option>
-                    <option value="Lira">Lira</option>
-                    <option value="Entebbe">Entebbe</option>
-                    <option value="Fort Portal">Fort Portal</option>
-                    <!-- Add more districts in Uganda here -->
-                  </optgroup>
-                </select><br /><br />
-
-                <button type="submit">Submit</button>
-              </form>
-            </div>
-          </div>
-        {% endblock %}
-        <footer style="text-align: center; opacity: 0.6">
-          <hr />
-          @EMIS chrone (For Educational purposes only) 2023 Nahurira Collin
-          Blessing
-        </footer>
+            {% comment %} FORM STARTS HERE {% endcomment %}
+            <label for="refugee">Is this learner a refugee?</label><br />
+            <input type="radio" id="yesRefugee" name="refugee" value="yes" />
+            <label for="yesRefugee">Yes</label>
+            <input type="radio" id="noRefugee" name="refugee" value="no" checked />
+            <label for="noRefugee">No</label><br /><br />
+            {% comment %} NATIONALITY {% endcomment %}
+            <label for="nationality">Learner nationality:</label><br />
+            <select id="nationality" name="nationality" required>
+              <option value="" disabled selected>Select a nationality</option>
+              <optgroup label="African countries">
+                <option value="Uganda" selected>Uganda</option>
+                <option value="Algeria">Algeria</option>
+                <option value="Angola">Angola</option>
+                <option value="Benin">Benin</option>
+                <option value="Botswana">Botswana</option>
+                <option value="Burkina Faso">Burkina Faso</option>
+                <option value="Burundi">Burundi</option>
+                <option value="Cabo Verde">Cabo Verde</option>
+                <option value="Cameroon">Cameroon</option>
+                <option value="Central African Republic">Central African Republic</option>
+                <option value="Chad">Chad</option>
+                <option value="Comoros">Comoros</option>
+                <option value="Congo">Congo</option>
+                <option value="Djibouti">Djibouti</option>
+                <option value="Egypt">Egypt</option>
+                <!-- Add more African countries here -->
+              </optgroup>
+            </select><br /><br />
+            {% comment %} FIRST NAME {% endcomment %}
+            <label for="firstName">First name *</label>
+            <input type="text" id="firstName" name="firstName" required /><br />
+            {% comment %} SIRNAME {% endcomment %}
+            <label for="sirname">Sirname *</label>
+            <input type="text" id="sirname" name="sirname" required /><br />
+            {% comment %} OTHER NAMES {% endcomment %}
+            <label for="otherNames">Other names</label>
+            <input type="text" id="otherNames" name="otherNames" /><br />
+            {% comment %} DATE OF BIRTH {% endcomment %}
+            <label for="dateOfBirth">Date of birth</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" required /><br />
+            {% comment %} GENDER {% endcomment %}
+            <label>Gender</label><br />
+            <input type="radio" id="male" name="gender" value="male" required />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label><br /><br />
+            {% comment %} IS LEARNER ORPHAN {% endcomment %}
+            <label for="isOrphan">Is learner an orphan?</label><br />
+            <input type="radio" id="yesOrphan" name="isOrphan" value="yes" />
+            <label for="yesOrphan">Yes</label>
+            <input type="radio" id="noOrphan" name="isOrphan" value="no" checked />
+            <label for="noOrphan">No</label><br /><br />
+            {% comment %} DISTRICT OF BIRTH {% endcomment %}
+            <label for=" ">District of birth</label><br />
+            <select id="districtOfBirth" name="districtOfBirth" required>
+              <option value="" disabled selected>Select a district</option>
+              <optgroup label="Districts in Uganda">
+                <option value="Kampala">Kampala</option>
+                <option value="Jinja">Jinja</option>
+                <option value="Gulu">Gulu</option>
+                <option value="Mbarara">Mbarara</option>
+                <option value="Mbale">Mbale</option>
+                <option value="Arua">Arua</option>
+                <option value="Masaka">Masaka</option>
+                <option value="Lira">Lira</option>
+                <option value="Entebbe">Entebbe</option>
+                <option value="Fort Portal">Fort Portal</option>
+                <!-- Add more districts in Uganda here -->
+              </optgroup>
+            </select><br /><br />
+            {% comment %} SUBMIT BUTTON {% endcomment %}
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      {% endblock %}
+      {% comment %} FOOTER {% endcomment %}
+      <footer style="text-align: center; opacity: 0.6">
+        <hr />
+        @EMIS chrone (For Educational purposes only) 2023 Nahurira Collin
+        Blessing
+      </footer>
       </div>
     </main>
   </body>
