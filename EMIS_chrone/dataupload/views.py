@@ -1,6 +1,6 @@
 import random
 from django.shortcuts import render
-from .models import learners
+from .models import Learners
 from django.contrib import messages
 
 # Create your views here.
@@ -44,7 +44,7 @@ def UploadData(request):
         nationality = request.POST["nationality"]
         photo = request.FILES.get("learner_photo", None)
 
-        new_student = learners(
+        new_student = Learners(
             LIN=LIN,
             firstName=firstName,
             sirname=sirname,

@@ -1,14 +1,15 @@
 from django.shortcuts import render
-from dataupload.models import learners
+from dataupload.models import Learners
 
 # Create your views here.
 
 
 def dashboard(request):
-    learnerFetch = learners.objects.all()
-    learnerCount = learners.objects.all().count()
-    learner_maleCount = learners.objects.filter(gender="male").count()
-    learner_femaleCount = learners.objects.filter(gender="female").count()
+
+    learnerFetch = Learners.objects.all()
+    learnerCount = Learners.objects.all().count()
+    learner_maleCount = Learners.objects.filter(gender="male").count()
+    learner_femaleCount = Learners.objects.filter(gender="female").count()
 
     context = {
         "learnerFetch": learnerFetch,

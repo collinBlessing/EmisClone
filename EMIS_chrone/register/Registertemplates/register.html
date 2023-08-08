@@ -18,7 +18,7 @@
           width="200px"
         />
         <div class="loginDiv">
-          <form action="">
+          <form action="{% url 'registerUser' %}" method="POST">
             <!-- Email -->
             <label for="Useremail">Email</label>
             <input type="email" name="Useremail" required />
@@ -31,7 +31,7 @@
             <!-- Institution type -->
             <label for="institutionType">Institution type</label>
             <select name="institutionType" id="" class="institutionType">
-              <option value="i_school">Secondary School</option>
+              <option value="i_school">institution / college</option>
               <option value="s_school">Secondary School</option>
               <option value="p_school">Primary School</option>
               <option value="k_school">Kindergaten School</option>

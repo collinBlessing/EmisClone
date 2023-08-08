@@ -11,7 +11,27 @@
   </head5>
 
   <body>
-    <header></header>
+    <header>
+      {% comment %} check for messages in the cache {% endcomment %}
+      {% if messages %} {% for message in messages %}
+
+      <div
+        {%
+        if
+        message.tags
+        %}
+        class="notification {{message.tags}}"
+        {%
+        endif
+        %}
+      >
+        <span class="close" onclick="this.parentElement.style.display='none'"
+          >&times;</span
+        >
+        <strong> Message: </strong> {{message}}
+      </div>
+      {% endfor %} {% endif %}
+    </header>
     <main>
       <!-- create main body -->
       <!-- side bar  body-->

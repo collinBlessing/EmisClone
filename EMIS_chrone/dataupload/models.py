@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class learners(models.Model):
+class Learners(models.Model):
     GENDER_CHOICES = [
         ('male', 'Male'),
         ('female', 'Female'),
@@ -29,27 +29,13 @@ class learners(models.Model):
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     isOrphan = models.CharField(max_length=3, choices=YES_NO_CHOICES)
     districtOfBirth = models.CharField(max_length=100)
-
+    # refugee model
     is_refugee = models.CharField(max_length=3, choices=REFUGEE_CHOICES)
+    # nationality model
     nationality = models.CharField(max_length=100)
-
-    # Add a photo field to store the learner's photo.
-    # If you are using Django 3.x or higher, you can use the `ImageField`.
-    # For Django versions below 3.x, use `FileField` with `upload_to` parameter.
+    # photo model
     photo = models.ImageField(upload_to='learners/', blank=True)
 
     def __str__(self):
         return self.firstName
 
-
-
-class teachingstaff(models.Model):
-    pass
-
-
-class supportingstaff(models.Model):
-    pass
-
-
-class myInstitution(models.Model):
-    pass

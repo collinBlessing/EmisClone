@@ -253,7 +253,6 @@ tr {
   justify-content: space-evenly;
 }
 
-
 /* for emis data upload */
 .container {
   display: flex;
@@ -322,5 +321,30 @@ button {
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+/* messages */
+.notification {
+  width: 300px;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 18%;
+  left: 50%;
+}
+.error {
+  background-color: #f44336;
+  color: white;
+}
+.success {
+  background-color: #4caf50;
+  color: white;
+}
+.close {
+  float: right;
+  font-weight: bold;
   cursor: pointer;
 }
