@@ -1,8 +1,99 @@
-.institutionType {
-  /* background-color: #228eb3; */
-  border: 0;
-  border-radius: 5px;
+/* Reset some default styling */
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body background */
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center the form */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Form container */
+.loginMainDiv {
+  background-color: #fff;
+  padding: 30px;
+  width: 60vw;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Logo */
+.loginMainDiv img {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* Form elements */
+.loginDiv label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.loginDiv input[type="email"],
+.loginDiv input[type="text"],
+.loginDiv input[type="password"],
+.loginDiv select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.loginDiv select {
+  /* appearance: none; */
+}
+
+/* Reduce width of input fields */
+.loginDiv input[type="email"],
+.loginDiv input[type="text"],
+.loginDiv input[type="password"],
+.loginDiv select {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 700px; /* Set a maximum width for consistency */
+}
+
+/* Submit button */
+.loginDiv button[type="submit"] {
+  background-color: #004c66;
+  color: #fff;
+  border: none;
   padding: 10px 20px;
-  outline: none;
-  margin-left: 5%;
+  margin-top: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loginDiv button[type="submit"]:hover {
+  background-color: #003952;
+}
+
+/* "Already on EMIS?" link */
+.loginDiv h4 {
+  margin-top: 15px;
+}
+
+.loginDiv h4 a {
+  color: #004c66;
+  text-decoration: none;
+}
+
+.loginDiv h4 a:hover {
+  text-decoration: underline;
 }
