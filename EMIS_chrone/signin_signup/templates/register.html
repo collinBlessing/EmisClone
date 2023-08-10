@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMIS Register School/Institution</title>
+    <style>
+      /* Reset some default styling */
+      * {
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body background */
+      body {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* Center vertically */
+      }
+
+      /* Form container */
+      .loginMainDiv {
+        background-color: #004c66;
+        padding: 30px;
+        width: 60vw;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      /* Logo */
+      .loginMainDiv img {
+        display: block;
+        margin: 0 auto 20px;
+      }
+
+      /* Form elements */
+      .loginDiv label {
+        color: aliceblue;
+        display: block;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+
+      .loginDiv input[type="email"],
+      .loginDiv input[type="text"],
+      .loginDiv input[type="password"],
+      .loginDiv select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .loginDiv select {
+        appearance: none;
+      }
+
+      /* Reduce width of input fields */
+      .loginDiv input[type="email"],
+      .loginDiv input[type="text"],
+      .loginDiv input[type="password"],
+      .loginDiv select {
+        width: 100%;
+        /* Adjust the width as needed */
+        max-width: 700px;
+        /* Set a maximum width for consistency */
+      }
+
+      /* Submit button */
+      .loginDiv button[type="submit"] {
+        background-color: #228eb3;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .loginDiv button[type="submit"]:hover {
+        background-color: #003952;
+      }
+
+      /* "Already on EMIS?" link */
+      .loginDiv h4 {
+        margin-top: 15px;
+        color: aliceblue;
+      }
+
+      .loginDiv h4 a {
+        color: #e7e7e75d;
+        text-decoration: none;
+        zoom: 97%;
+      }
+
+      .loginDiv h4 a:hover {
+        text-decoration: underline;
+        zoom: 100%;
+      }
+
+      .error-message {
+        border: 1px solid #e74c3c;
+        background-color: #f2dede;
+        color: #e74c3c;
+        font-size: 14px;
+        margin-top: 5px;
+        padding: 5px 10px;
+        border-radius: 4px;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      {% comment %} check for messages in the cache {% endcomment %}
+      {% if messages %} {% for message in messages %}
+
+      <div {% if message.tags %} class="notification {{message.tags}}" {% endif %}>
+        <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+        <strong> Message: </strong> {{message}}
+      </div>
+      {% endfor %} {% endif %}
+      <div class="loginMainDiv">
+        <img src="{% static 'images/logo.png' %}" alt="EMIS logo" width="200px" />
+        <div class="loginDiv">
+          <form action="{% url 'registerUser' %}" method="POST" onsubmit="return comparePasswords()">
+            {% csrf_token %}
+            <!-- Email -->
+            <label for="Useremail">Email</label>
+            <input type="email" name="Useremail" required />
+            <!-- User first name -->
+            <label for="Userfirstname">First Name</label>
+            <input type="text" name="Userfirstname" required />
+            <!-- User lastname -->
+            <label for="Userlastname">Last Name</label>
+            <input type="text" name="Userlastname" required />
+
+            <!-- Create Password -->
+            <!-- error message -->
+            <div id="passwordMismatch" class="error-message">Passwords do not match. Please check again.</div>
+            <!-- password field -->
+            <label for="Userpassword">Password</label>
+            <input type="password" id="password" name="Userpassword" required />
+            <!-- Confirm Password -->
+            <label for="Confirmpassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="Confirmpassword" required />
+            <!-- Institution Name -->
+            <label for="Userschoolname">School Name</label>
+            <input type="text" name="Userschoolname" required />
+            <!-- Institution type -->
+            <label for="institutionType">Institution type</label>
+            <select name="institutionType" id="" class="institutionType">
+              <option value="i_school">institution / college</option>
+              <option value="s_school">Secondary School</option>
+              <option value="p_school">Primary School</option>
+              <option value="k_school">Kindergaten School</option>
+            </select>
+            <button type="submit">Sign Up</button>
+          </form>
+          <h4>Already on EMIS? <a href="/">Log into your account</a></h4>
+        </div>
+      </div>
+      <div></div>
+    </main>
+    <footer></footer>
+    <script>
+      // Function to compare passwords before form submission
+      function comparePasswords() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var passwordMismatchMessage = document.getElementById("passwordMismatch");
+
+        if (password !== confirmPassword) {
+          passwordMismatchMessage.style.display = "block"; // Show error message
+          return false; // Prevent form submission
+        }
+
+        passwordMismatchMessage.style.display = "none"; // Hide error message
+        return true; // Allow form submission
+      }
+    </script>
+  </body>
+
+</html>

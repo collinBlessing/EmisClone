@@ -2,15 +2,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-import login.urls
 import dashboard.urls
 import dataupload.urls
+from signin_signup import signin_urls
+from signin_signup import signup_urls
 
-from login import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include(login.urls)),
+    path('', include(signin_urls)),
+    path('register/', include(signup_urls)),
     path("dashboard/", include(dashboard.urls)),
     path("emisdataupload/", include(dataupload.urls)),
 ]

@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "login.apps.LoginConfig",
+    "signin_signup.apps.SigninSignupConfig",
     "dashboard.apps.DashboardConfig",
     "dataupload.apps.DatauploadConfig",
 ]
@@ -59,7 +59,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            BASE_DIR / "login/LoginTemplates",
+            BASE_DIR / "signin_signup/templates",
             BASE_DIR / "dashboard/templates",
             BASE_DIR / "dataupload/templates",
             BASE_DIR / "templates",
