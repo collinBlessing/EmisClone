@@ -152,8 +152,8 @@
 
   <body>
     <main>
-      {% comment %} check for messages in the cache {% endcomment %} {% if
-      messages %} {% for message in messages %}
+      <!--check for message messsage  -->
+      {% if messages %} {% for message in messages %}
 
       <div
         {%
@@ -170,7 +170,7 @@
         >
         <strong> Message: </strong> {{message}}
       </div>
-      {% endfor %} {% endif %}
+      {% endfor %}{%endif%}
 
       <div class="loginMainDiv">
         <img
@@ -208,10 +208,10 @@
             <label for="Userpassword">Password</label>
             <input type="password" id="password" name="Userpassword" required />
             <!-- Confirm Password -->
-            <label for="Confirmpassword">Confirm Password</label>
+            <label for="Userpassword">Confirm Password</label>
             <input
               type="password"
-              id="confirmPassword"
+              id="Userpassword"
               name="Confirmpassword"
               required
             />

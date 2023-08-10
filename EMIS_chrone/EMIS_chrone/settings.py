@@ -135,3 +135,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# direct django to point into my custom user model
+AUTH_USER_MODEL = "signin_signup.School_register"
+
+

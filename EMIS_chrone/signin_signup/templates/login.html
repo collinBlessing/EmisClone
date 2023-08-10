@@ -124,8 +124,8 @@
 
   <body>
     <main>
-      {% comment %} check for messages in the cache {% endcomment %} {% if
-      messages %} {% for message in messages %}
+      <!--check for message messsage  -->
+      {% if messages %} {% for message in messages %}
 
       <div
         {%
@@ -154,7 +154,8 @@
         <!-- div class -->
         <div class="loginDiv">
           <!-- login form -->
-          <form action="" method="POST">
+          <form action="{% url 'auth' %}" method="POST">
+            {% csrf_token %}
             <!-- Email -->
             <label for="Useremail">Email</label>
             <input type="email" id="" name="Useremail" required />
