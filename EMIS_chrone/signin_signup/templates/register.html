@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -120,23 +119,75 @@
         border-radius: 4px;
         display: none;
       }
+
+      /* messages */
+      .notification {
+        width: 300px;
+        padding: 15px;
+        margin: 20px auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 18%;
+        left: 50%;
+      }
+
+      .error {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .success {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .close {
+        float: right;
+        font-weight: bold;
+        cursor: pointer;
+      }
     </style>
   </head>
 
   <body>
     <main>
-      {% comment %} check for messages in the cache {% endcomment %}
-      {% if messages %} {% for message in messages %}
+      {% comment %} check for messages in the cache {% endcomment %} {% if
+      messages %} {% for message in messages %}
 
-      <div {% if message.tags %} class="notification {{message.tags}}" {% endif %}>
-        <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+      <div
+        {%
+        if
+        message.tags
+        %}
+        class="notification {{message.tags}}"
+        {%
+        endif
+        %}
+      >
+        <span class="close" onclick="this.parentElement.style.display='none'"
+          >&times;</span
+        >
         <strong> Message: </strong> {{message}}
       </div>
       {% endfor %} {% endif %}
+
       <div class="loginMainDiv">
-        <img src="{% static 'images/logo.png' %}" alt="EMIS logo" width="200px" />
+        <img
+          src="{% static 'images/logo.png' %}"
+          alt="EMIS logo"
+          width="200px"
+        />
+
+        <!-- register form here -->
+        <!-- div class -->
         <div class="loginDiv">
-          <form action="{% url 'registerUser' %}" method="POST" onsubmit="return comparePasswords()">
+          <!-- form here -->
+          <form
+            action="{% url 'registerUser' %}"
+            method="POST"
+            onsubmit="return comparePasswords()"
+          >
             {% csrf_token %}
             <!-- Email -->
             <label for="Useremail">Email</label>
@@ -150,38 +201,48 @@
 
             <!-- Create Password -->
             <!-- error message -->
-            <div id="passwordMismatch" class="error-message">Passwords do not match. Please check again.</div>
+            <div id="passwordMismatch" class="error-message">
+              Passwords do not match. Please check again.
+            </div>
             <!-- password field -->
             <label for="Userpassword">Password</label>
             <input type="password" id="password" name="Userpassword" required />
             <!-- Confirm Password -->
             <label for="Confirmpassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" name="Confirmpassword" required />
+            <input
+              type="password"
+              id="confirmPassword"
+              name="Confirmpassword"
+              required
+            />
             <!-- Institution Name -->
             <label for="Userschoolname">School Name</label>
             <input type="text" name="Userschoolname" required />
             <!-- Institution type -->
             <label for="institutionType">Institution type</label>
+            <!-- institution type here -->
             <select name="institutionType" id="" class="institutionType">
               <option value="i_school">institution / college</option>
               <option value="s_school">Secondary School</option>
               <option value="p_school">Primary School</option>
               <option value="k_school">Kindergaten School</option>
             </select>
+            <!-- submit button -->
             <button type="submit">Sign Up</button>
           </form>
+          <!-- link to login -->
           <h4>Already on EMIS? <a href="/">Log into your account</a></h4>
         </div>
       </div>
-      <div></div>
     </main>
-    <footer></footer>
+    <!-- javascript for validating  the password field -->
     <script>
       // Function to compare passwords before form submission
       function comparePasswords() {
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
-        var passwordMismatchMessage = document.getElementById("passwordMismatch");
+        var passwordMismatchMessage =
+          document.getElementById("passwordMismatch");
 
         if (password !== confirmPassword) {
           passwordMismatchMessage.style.display = "block"; // Show error message
@@ -193,5 +254,4 @@
       }
     </script>
   </body>
-
 </html>

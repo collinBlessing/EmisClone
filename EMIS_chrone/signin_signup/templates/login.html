@@ -1,10 +1,9 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <style>
       /* Reset some default styling */
@@ -80,7 +79,6 @@
       .loginDiv h4 {
         margin-top: 15px;
         color: aliceblue;
-
       }
 
       .loginDiv h4 a {
@@ -93,14 +91,69 @@
         text-decoration: underline;
         zoom: 100%;
       }
+
+      /* messages */
+      .notification {
+        width: 300px;
+        padding: 15px;
+        margin: 20px auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 18%;
+        left: 50%;
+      }
+
+      .error {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .success {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .close {
+        float: right;
+        font-weight: bold;
+        cursor: pointer;
+      }
     </style>
   </head>
 
   <body>
     <main>
+      {% comment %} check for messages in the cache {% endcomment %} {% if
+      messages %} {% for message in messages %}
+
+      <div
+        {%
+        if
+        message.tags
+        %}
+        class="notification {{message.tags}}"
+        {%
+        endif
+        %}
+      >
+        <span class="close" onclick="this.parentElement.style.display='none'"
+          >&times;</span
+        >
+        <strong> Message: </strong> {{message}}
+      </div>
+      {% endfor %} {% endif %}
       <div class="loginMainDiv">
-        <img src="{% static 'images/logo.png' %}" alt="EMIS logo" width="200px" />
+        <img
+          src="{% static 'images/logo.png' %}"
+          alt="EMIS logo"
+          width="200px"
+        />
+
+        <!-- login form here -->
+        <!-- div class -->
         <div class="loginDiv">
+          <!-- login form -->
           <form action="" method="POST">
             <!-- Email -->
             <label for="Useremail">Email</label>
@@ -109,12 +162,15 @@
             <label for="Userpassword">Password</label>
             <input type="password" id="" name="Userpassword" required />
             <!-- Submit button -->
-            <button type="submit">Sign Up</button>
+            <button type="submit">Sign In</button>
           </form>
-          <h4>New to EMIS? <a href="{% url 'register' %}">Register for an account</a></h4>
+          <!-- link to register form -->
+          <h4>
+            New to EMIS?
+            <a href="{% url 'register' %}">Register for an account</a>
+          </h4>
         </div>
       </div>
     </main>
   </body>
-
 </html>
