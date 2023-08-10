@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "login.apps.LoginConfig",
-    "register.apps.RegisterConfig",
     "dashboard.apps.DashboardConfig",
     "dataupload.apps.DatauploadConfig",
 ]
@@ -61,7 +60,6 @@ TEMPLATES = [
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
             BASE_DIR / "login/LoginTemplates",
-            BASE_DIR / "register/Registertemplates",
             BASE_DIR / "dashboard/templates",
             BASE_DIR / "dataupload/templates",
             BASE_DIR / "templates",
