@@ -12,7 +12,6 @@
 
   <body>
     <header>
-      {% comment %} check for messages in the cache {% endcomment %}
       {% if messages %} {% for message in messages %}
 
       <div
@@ -232,7 +231,7 @@
               <span style="color: black">Contact Person Account</span>
               <br />
               <span style="color: rgb(0, 1, 56); font-weight: bold"
-                >ATWINE ASSUMPTA</span
+                >{{username}}</span
               >
             </div>
           </div>

@@ -7,7 +7,10 @@ from django.contrib import messages
 
 
 def emisdataupload(request):
-    return render(request, "emisdataupload.html")
+    username_for_login_personel = request.session.get("data_pass_username")
+    return render(
+        request, "emisdataupload.html", {"username": username_for_login_personel}
+    )
 
 
 # Generate student lin number
@@ -30,7 +33,7 @@ def UploadData(request):
         nationality_initial = nationality[0]
         LIN = generate_lin_number(nationality_initial)
         # check_for_NINS = learners.objects.all()
-        for everyNin in Learners.objects.values_list('LIN'):
+        for everyNin in Learners.objects.values_list("LIN"):
             while LIN == everyNin:
                 LIN = generate_lin_number(nationality_initial)
 

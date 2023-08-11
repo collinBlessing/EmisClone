@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 # from .forms import RegistrationForm
 from django.contrib import messages
 from .models import School_register
-from django.contrib.auth import authenticate, login,hashers
+from django.contrib.auth import authenticate, login, hashers
 
 
 # Create your views here.
@@ -59,6 +59,7 @@ def sign_in_user(request):
 
         if user_auth_result:
             login(request, user_auth_result)
+            request.session["data_pass_username"] = user_auth_result.get_username()
             return redirect("dashboard_home")
         else:
             messages.error(request, "Invalid login details, check email or password")
