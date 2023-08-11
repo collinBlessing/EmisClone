@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 # from .forms import RegistrationForm
 from django.contrib import messages
 from .models import School_register
-from django.contrib.auth import authenticate, login, hashers
+from django.contrib.auth import authenticate, login, hashers, logout
 
 
 # Create your views here.
@@ -18,6 +18,7 @@ def sign_up_view(request):
 
 
 def logout_view(request):
+    logout(request)
     return render(request, "login.html")
 
 

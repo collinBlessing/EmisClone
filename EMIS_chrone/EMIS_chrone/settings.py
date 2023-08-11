@@ -51,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "signin_signup.middleware.logoutmiddleware"
 ]
 
 ROOT_URLCONF = "EMIS_chrone.urls"
