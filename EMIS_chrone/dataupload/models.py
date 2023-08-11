@@ -25,7 +25,7 @@ class Learners(models.Model):
     user = models.ForeignKey(
         get_user_model(), on_delete=models.CASCADE, default="", null=True
     )
-    LIN = models.CharField(max_length=11, null=True, auto_created=True)
+    LIN = models.CharField(max_length=11, null=True, auto_created=True,unique=True)
     firstName = models.CharField(max_length=100)
     sirname = models.CharField(max_length=100)
     otherNames = models.CharField(max_length=100, blank=True)

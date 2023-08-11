@@ -6,33 +6,31 @@ from django.db.models import Q
 
 
 def dashboard(request):
-    # fetch user email from the session
+    # fetch user email from the session and get its id
     username_for_login_personel = request.session.get("data_pass_username")
+    # get id
+    user_id = request.user.id
+    print(user_id)
+
     # initialise multiple filter conditions
 
     # male conditioning
-    males_condition_one = Q(gender="male")
-    males_condition_two = Q(user=username_for_login_personel)
+    males_condition = Q(gender="male") & Q(user=user_id)
 
     # female conditioning
-    females_condition_one = Q(gender="female")
-    females_condition_two = Q(user=username_for_login_personel)
+    females_condition = Q(gender="female") & Q(user=user_id)
 
     # initialise learnercount, learnermale_count and learner_female_count variable
 
     # initialise total  learners count
-    learnerCount = Learners.objects.filter(user=username_for_login_personel).count()
+    learnerCount = Learners.objects.filter(user=user_id).count()
 
     # conditions for filtering out males and females based in the previously defined conditioning above
     # male conditioning
-    learner_maleCount = Learners.objects.filter(
-        males_condition_one & males_condition_two
-    ).count()
+    learner_maleCount = Learners.objects.filter(males_condition).count()
 
     # female cinditioning
-    learner_femaleCount = Learners.objects.filter(
-        females_condition_one & females_condition_two
-    ).count()
+    learner_femaleCount = Learners.objects.filter(females_condition).count()
 
     # pass in the context
     context = {

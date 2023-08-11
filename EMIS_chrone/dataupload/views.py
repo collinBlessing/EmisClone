@@ -2,6 +2,7 @@ import random
 from django.shortcuts import render
 from .models import Learners
 from django.contrib import messages
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 
@@ -21,21 +22,20 @@ def generate_lin_number(initial):
     return lin_number
 
 
-# if __name__ == "__main__":
-#     lin_number = generate_lin_number()
-#     print("Generated LIN number:", lin_number)
+def is_lin_unique(lin):
+    return not Learners.objects.filter(LIN=lin).exists()
 
 
 def UploadData(request):
+    username_for_login_personel = request.session.get("data_pass_username")
     if request.method == "POST":
         nationality = request.POST["nationality"]
         # pass nationality initial to the auto generate lin function
         nationality_initial = nationality[0]
+        # generate and check for lin uniqueness
         LIN = generate_lin_number(nationality_initial)
-        # check_for_NINS = learners.objects.all()
-        for everyNin in Learners.objects.values_list("LIN"):
-            while LIN == everyNin:
-                LIN = generate_lin_number(nationality_initial)
+        while not is_lin_unique(LIN):
+            LIN = generate_lin_number(nationality_initial)
 
         firstName = request.POST["firstName"]
         sirname = request.POST["sirname"]
@@ -47,22 +47,34 @@ def UploadData(request):
         is_refugee = request.POST["refugee"]
         photo = request.FILES.get("learner_photo", None)
 
-        new_student = Learners(
-            LIN=LIN,
-            firstName=firstName,
-            sirname=sirname,
-            otherNames=otherNames,
-            dateOfBirth=dateOfBirth,
-            gender=gender,
-            isOrphan=isOrphan,
-            districtOfBirth=districtOfBirth,
-            is_refugee=is_refugee,
-            nationality=nationality,
-            photo=photo,
-        )
-        new_student.save()
-        messages.success(request, "Learner added successfully")
-        return render(request, "emisdataupload.html")
+        # get user instance
+        try:
+            user_instance = get_user_model().objects.get(
+                email=username_for_login_personel
+            )
+
+            new_student = Learners(
+                user=user_instance,
+                LIN=LIN,
+                firstName=firstName,
+                sirname=sirname,
+                otherNames=otherNames,
+                dateOfBirth=dateOfBirth,
+                gender=gender,
+                isOrphan=isOrphan,
+                districtOfBirth=districtOfBirth,
+                is_refugee=is_refugee,
+                nationality=nationality,
+                photo=photo,
+            )
+            # save student
+            new_student.save()
+            # pass message
+            messages.success(request, "Learner added successfully")
+            return render(request, "emisdataupload.html")
+        except get_user_model().DoesNotExist:
+            messages.error(request, "could not find user")
+
     else:
         messages.error(request, "An Error occured while submitting data")
         return render(request, "emisdataupload.html")

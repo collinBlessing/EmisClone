@@ -30,6 +30,7 @@ def register_user_view(request):
         hashed_password = hashers.make_password(Userpassword)
         new_user = School_register(
             username=Useremail,
+            email=Useremail,
             password=hashed_password,
             first_name=Userfirstname,
             last_name=Userlastname,
