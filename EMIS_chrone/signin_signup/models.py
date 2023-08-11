@@ -12,8 +12,3 @@ class School_register(AbstractUser):
 
     Userschoolname = models.CharField(max_length=100)
     institutionType = models.CharField(max_length=20)
-
-    groups = models.ManyToManyField("auth.group", related_name="school_users")
-    user_permissions = models.ManyToManyField(
-        "auth.Permission", related_name="school_users"
-    )

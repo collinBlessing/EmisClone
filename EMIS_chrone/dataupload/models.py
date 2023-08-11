@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 
 # Create your models here.
@@ -21,6 +22,9 @@ class Learners(models.Model):
         ("yes", "Yes"),
         ("no", "No"),
     ]
+    user = models.ForeignKey(
+        get_user_model(), on_delete=models.CASCADE, default="", null=True
+    )
     LIN = models.CharField(max_length=11, null=True, auto_created=True)
     firstName = models.CharField(max_length=100)
     sirname = models.CharField(max_length=100)
