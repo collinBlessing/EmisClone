@@ -42,17 +42,62 @@ a {
   flex-direction: column;
 }
 
+.mainsidebarlist a div{
+  height: 6vh;
+}
+
 .mainsidebarlist div {
   text-align: left;
   color: #f0f8ffd5;
   font-size: 17px;
   font-weight: bold;
   width: 100%;
-  height: 6vh;
+  height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-left: 20px;
+}
+
+.sidebar {
+  display: inline;
+  width: 100%;
+  margin: 0;
+  height: fit-content;
+  padding: 0;
+}
+
+.sidebar ul {
+  width: 100%;
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar .main-item {
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sub-menu li:hover {
+  color: #f0f8ff;
+  background-color: #3ca4c73f;
+}
+
+.sub-menu {
+  list-style: none;
+  margin-top: 5px;
+  padding-left: 15px;
+  display: none;
+}
+
+.sidebar-content {
+  padding: 20px;
+  border-left: 1px solid #ccc;
+  min-height: 200px;
 }
 
 .mainsidebarlist div:hover {
