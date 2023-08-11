@@ -1,48 +1,113 @@
+/* Reset some default styling */
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body background */
 body {
+  font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
   height: 100vh;
+  flex-direction: column;
   align-items: center;
-  color: aliceblue;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  box-sizing: content-box;
+  justify-content: center;
+  /* Center vertically */
 }
-.loginDiv {
-  width: 60%;
-}
-.loginDiv form {
-  display: block;
-}
-form {
+
+/* Form container */
+.loginMainDiv {
+  background-color: #004c66;
+  padding: 30px;
+  width: 60vw;
+  height: 70vh;
   display: flex;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
-form input {
-  margin: 15px 0;
-  border: 0;
-  border-radius: 5px;
-  background-color: aliceblue;
-  outline: none;
-  width: 10%;
-  height: 40px;
-  padding: 10px;
+
+/* Logo */
+.loginMainDiv img {
+  display: block;
+  margin: 0 auto 20px;
 }
-form button {
-  margin: 15px 0;
+
+/* Form elements */
+.loginDiv label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  color: aliceblue;
+}
+
+.loginDiv input[type="email"],
+.loginDiv input[type="password"] {
   width: 100%;
   padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Submit button */
+.loginDiv button[type="submit"] {
   background-color: #228eb3;
+  color: #fff;
   border: none;
-  border-radius: 5px;
-  height: 40px;
-  color: aliceblue;
-  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-a {
-  color: inherit;
-  opacity: 0.3;
+.loginDiv button[type="submit"]:hover {
+  background-color: #003952;
+}
+
+/* "New to EMIS?" link */
+.loginDiv h4 {
+  margin-top: 15px;
+  color: aliceblue;
+}
+
+.loginDiv h4 a {
+  color: #cccccc85;
   text-decoration: none;
-  font-size: 13px;
+  zoom: 97%;
+}
+
+.loginDiv h4 a:hover {
+  text-decoration: underline;
+  zoom: 100%;
+}
+
+/* messages */
+.notification {
+  width: 300px;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 18%;
+  left: 50%;
+}
+
+.error {
+  background-color: #f44336;
+  color: white;
+}
+
+.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.close {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
 }

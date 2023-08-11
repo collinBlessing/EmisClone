@@ -10,23 +10,20 @@ body {
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
-}
-
-/* Center the form */
-.main {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  /* Center vertically */
 }
 
 /* Form container */
 .loginMainDiv {
-  background-color: #fff;
+  background-color: #004c66;
   padding: 30px;
   width: 60vw;
+  display: flex;
+  align-items: center;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -40,6 +37,7 @@ body {
 
 /* Form elements */
 .loginDiv label {
+  color: aliceblue;
   display: block;
   font-weight: bold;
   margin-top: 15px;
@@ -57,7 +55,7 @@ body {
 }
 
 .loginDiv select {
-  /* appearance: none; */
+  appearance: none;
 }
 
 /* Reduce width of input fields */
@@ -65,13 +63,15 @@ body {
 .loginDiv input[type="text"],
 .loginDiv input[type="password"],
 .loginDiv select {
-  width: 100%; /* Adjust the width as needed */
-  max-width: 700px; /* Set a maximum width for consistency */
+  width: 100%;
+  /* Adjust the width as needed */
+  max-width: 700px;
+  /* Set a maximum width for consistency */
 }
 
 /* Submit button */
 .loginDiv button[type="submit"] {
-  background-color: #004c66;
+  background-color: #228eb3;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -87,13 +87,55 @@ body {
 /* "Already on EMIS?" link */
 .loginDiv h4 {
   margin-top: 15px;
+  color: aliceblue;
 }
 
 .loginDiv h4 a {
-  color: #004c66;
+  color: #e7e7e75d;
   text-decoration: none;
+  zoom: 97%;
 }
 
 .loginDiv h4 a:hover {
   text-decoration: underline;
+  zoom: 100%;
+}
+
+.error-message {
+  border: 1px solid #e74c3c;
+  background-color: #f2dede;
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+/* messages */
+.notification {
+  width: 300px;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 18%;
+  left: 50%;
+}
+
+.error {
+  background-color: #f44336;
+  color: white;
+}
+
+.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.close {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
 }

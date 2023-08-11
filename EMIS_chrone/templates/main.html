@@ -14,8 +14,19 @@
     <header>
       {% if messages %} {% for message in messages %}
 
-      <div {% if message.tags %} class="notification {{message.tags}}" {% endif %}>
-        <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+      <div
+        {%
+        if
+        message.tags
+        %}
+        class="notification {{message.tags}}"
+        {%
+        endif
+        %}
+      >
+        <span class="close" onclick="this.parentElement.style.display='none'"
+          >&times;</span
+        >
         <strong> Message: </strong> {{message}}
       </div>
       {% endfor %} {% endif %}
@@ -29,14 +40,22 @@
           <!-- emis icon -->
           <img src="{% static 'images/logo.png'%}" alt="" height="60%" />
           <!-- menu icon -->
-          <img src="{% static 'images/icons8-menu-30.png'%}" alt="" height="30%" />
+          <img
+            src="{% static 'images/icons8-menu-30.png'%}"
+            alt=""
+            height="30%"
+          />
         </div>
         <!-- EMis list in the sidebar -->
         <div class="mainsidebarlist">
           <!-- list item -->
           <a href="/dashboard/">
             <div>
-              <img src="{% static 'images/icons8-dashboard-32.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-dashboard-32.png'%}"
+                alt=""
+                width="6%"
+              />
               EMIS Dashboard
             </div>
           </a>
@@ -44,7 +63,11 @@
           <div class="sidebar">
             <ul>
               <li class="main-item" id="register">
-                <img src="{% static 'images/icons8-upload-to-cloud-64.png'%}" alt="" width="6%" />
+                <img
+                  src="{% static 'images/icons8-upload-to-cloud-64.png'%}"
+                  alt=""
+                  width="6%"
+                />
                 EMIS DATAUPLOAD
 
                 <ul class="sub-menu">
@@ -62,63 +85,99 @@
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-settings-50.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-settings-50.png'%}"
+                alt=""
+                width="6%"
+              />
               My Institution
             </div>
           </a>
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-license-80.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-license-80.png'%}"
+                alt=""
+                width="6%"
+              />
               License and Registration
             </div>
           </a>
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-book-50.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-book-50.png'%}"
+                alt=""
+                width="6%"
+              />
               Learners
             </div>
           </a>
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-human-91.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-human-91.png'%}"
+                alt=""
+                width="6%"
+              />
               Human Resource
             </div>
           </a>
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-infrastructure-64.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-infrastructure-64.png'%}"
+                alt=""
+                width="6%"
+              />
               Infrastructure
             </div>
           </a>
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-learning-50.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-learning-50.png'%}"
+                alt=""
+                width="6%"
+              />
               Learning and Playing Materials
             </div>
           </a>
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-paint-50.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-paint-50.png'%}"
+                alt=""
+                width="6%"
+              />
               Facilities
             </div>
           </a>
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-weightlifting-48.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-weightlifting-48.png'%}"
+                alt=""
+                width="6%"
+              />
               P.E & Sports
             </div>
           </a>
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-stack-of-coins-48.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-stack-of-coins-48.png'%}"
+                alt=""
+                width="6%"
+              />
               Finance
             </div>
           </a>
@@ -129,14 +188,22 @@
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-stack-of-coins-48.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-stack-of-coins-48.png'%}"
+                alt=""
+                width="6%"
+              />
               Publications
             </div>
           </a>
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-stack-of-coins-48.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-stack-of-coins-48.png'%}"
+                alt=""
+                width="6%"
+              />
               EMIS Notices
             </div>
           </a>
@@ -146,7 +213,11 @@
           <!-- list item -->
           <a href="">
             <div>
-              <img src="{% static 'images/icons8-stack-of-coins-48.png'%}" alt="" width="6%" />
+              <img
+                src="{% static 'images/icons8-stack-of-coins-48.png'%}"
+                alt=""
+                width="6%"
+              />
               EMIS Support
             </div>
           </a>
@@ -156,7 +227,11 @@
         <!-- creating header -->
         <div class="headerDiv">
           <div class="academicyear">
-            <img src="{% static 'images/icons8-timeline-week-48.png'%}" height="70%" alt="" />
+            <img
+              src="{% static 'images/icons8-timeline-week-48.png'%}"
+              height="70%"
+              alt=""
+            />
             ACADEMIC YEAR 2023
           </div>
           <div class="Useraccount" style="width: 25%">
@@ -164,10 +239,13 @@
             <div class="UseraccountDetails">
               <span style="color: black">Contact Person Account</span>
               <br />
-              <span style="color: rgb(0, 1, 56); font-weight: bold">{{username}}</span>
+              <span style="color: rgb(0, 1, 56); font-weight: bold"
+                >{{username}}</span
+              >
             </div>
             <a href="/logout/">
-              <div style="
+              <div
+                style="
                   /* background-color: rgb(172, 0, 0); */
                   padding: 10px;
                   color: rgb(251, 0, 0);
@@ -179,8 +257,13 @@
                   flex-direction: row;
                   align-items: center;
                   margin: 5px;
-                ">
-                <img src="{% static 'images/icons8-shutdown-48.png' %}" alt="" height="40" />
+                "
+              >
+                <img
+                  src="{% static 'images/icons8-shutdown-48.png' %}"
+                  alt=""
+                  height="40"
+                />
                 Logout
               </div>
             </a>
@@ -197,7 +280,11 @@
             </div>
             <!-- data upload button -->
             <div class="academicyear" style="background-color: #000c36">
-              <img src="{% static 'images/icons8-arrow-30.png' %}" height="50%" alt="" />
+              <img
+                src="{% static 'images/icons8-arrow-30.png' %}"
+                height="50%"
+                alt=""
+              />
               <a href="/emisdataupload/"> GO TO EMIS DATA UPLOAD </a>
             </div>
             {% comment %} Child elements will override this block with their
@@ -211,6 +298,7 @@
           Blessing
         </footer>
       </div>
+      <!-- drop down css -->
       <script>
         const mainItems = document.querySelectorAll(".sidebar");
         const subMenus = document.querySelectorAll(".sub-menu");
@@ -230,5 +318,4 @@
       </script>
     </main>
   </body>
-
 </html>
