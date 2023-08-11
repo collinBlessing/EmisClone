@@ -9,7 +9,9 @@ class logoutmiddleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        if not request.user.is_authenticated and request.path != reverse("login"):
+        # exclude register and login from the excludedlinks when not authorised, stored them in a list
+        allowed_urls = [reverse("login"), reverse("register"), reverse("logout")]
+        if not request.user.is_authenticated and request.path not in allowed_urls:
             messages.error(request, "You must first login !")
             return redirect("login")
 

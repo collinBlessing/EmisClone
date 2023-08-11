@@ -19,7 +19,7 @@ def sign_up_view(request):
 
 def logout_view(request):
     logout(request)
-    return render(request, "login.html")
+    return redirect("login")
 
 
 # register user
