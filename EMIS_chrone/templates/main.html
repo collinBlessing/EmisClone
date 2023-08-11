@@ -225,7 +225,7 @@
             />
             ACADEMIC YEAR 2023
           </div>
-          <div class="Useraccount">
+          <div class="Useraccount" style="width: 25%">
             <div class="UseraccountDetailsInitials">AA</div>
             <div class="UseraccountDetails">
               <span style="color: black">Contact Person Account</span>
@@ -234,6 +234,30 @@
                 >{{username}}</span
               >
             </div>
+            <a href="/logout/">
+              <div
+                style="
+                  background-color: rgb(172, 0, 0);
+                  padding: 10px;
+                  color: white;
+                  border: none;
+                  border-radius: 5px;
+                  font-size: 0.8em;
+                  cursor: pointer;
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  margin: 5px;
+                "
+              >
+                <img
+                  src="{% static 'images/icons8-logout-48.png' %}"
+                  alt=""
+                  height="20"
+                />
+                Logout
+              </div>
+            </a>
           </div>
         </div>
         <!-- creating main -->

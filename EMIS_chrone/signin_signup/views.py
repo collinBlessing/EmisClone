@@ -17,6 +17,10 @@ def sign_up_view(request):
     return render(request, "register.html")
 
 
+def logout_view(request):
+    return render(request, "login.html")
+
+
 # register user
 def register_user_view(request):
     if request.method == "POST":

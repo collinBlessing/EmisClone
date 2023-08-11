@@ -4,6 +4,7 @@ body {
   font-family: roboto;
   /* overflow-y: hidden; */
 }
+
 main {
   display: flex;
   width: 100%;
@@ -11,13 +12,16 @@ main {
   justify-content: space-around;
   flex-direction: row;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 .sidebarDiv {
   width: 20%;
 }
+
 .emislogo {
   background-color: #228eb3;
   height: 10vh;
@@ -27,6 +31,7 @@ a {
   justify-content: space-around;
   align-items: center;
 }
+
 .mainsidebarlist {
   background-color: #000c36;
   overflow-y: auto;
@@ -49,30 +54,38 @@ a {
   align-items: center;
   padding-left: 20px;
 }
+
 .mainsidebarlist div:hover {
   color: #f0f8ff;
   background-color: #3ca4c73f;
 }
+
 .mainsidebarlist div img {
   padding-right: 20px;
 }
+
 .mainsidebarlistHeadings {
   color: #f0f8ff9d;
   padding-left: 20px;
 }
+
 /* customising the scroll bar */
 /* For Webkit (Chrome, Safari, etc.) */
 .mainsidebarlist::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
+  width: 8px;
+  /* Width of the scrollbar */
 }
 
 .mainsidebarlist::-webkit-scrollbar-thumb {
-  background-color: #dadada71; /* Color of the scrollbar thumb */
-  border-radius: 5px; /* Rounded corners of the thumb */
+  background-color: #dadada71;
+  /* Color of the scrollbar thumb */
+  border-radius: 5px;
+  /* Rounded corners of the thumb */
 }
 
 .mainsidebarlist::-webkit-scrollbar-thumb:hover {
-  background-color: #b9b9b9ab; /* Color of the scrollbar thumb on hover */
+  background-color: #b9b9b9ab;
+  /* Color of the scrollbar thumb on hover */
 }
 
 /* main body css */
@@ -82,6 +95,7 @@ a {
   height: 100vh;
   overflow-y: auto;
 }
+
 .headerDiv {
   height: 10vh;
   align-items: center;
@@ -90,6 +104,7 @@ a {
   justify-content: flex-end;
   background-color: #c3d3da;
 }
+
 .academicyear {
   width: 14%;
   height: 4vh;
@@ -103,13 +118,15 @@ a {
   border: 4px solid #c3d3dae5;
   background-color: #228eb3;
 }
+
 .Useraccount {
-  width: 20%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
 }
+
 .UseraccountDetailsInitials {
   border: none;
   border-radius: 50%;
@@ -118,6 +135,7 @@ a {
   color: #c3d3da;
   background-color: #000c36;
 }
+
 .UseraccountDetails {
   font-family: inherit;
   font-size: 14px;
@@ -133,28 +151,32 @@ a {
   padding-bottom: 20px;
   border-bottom: 1px solid #339194;
 }
+
 .welcome {
   text-align: start;
   opacity: 0.7;
   color: #000c36;
 }
+
 .dataDiv {
   display: flex;
   height: 110vh;
   overflow-y: auto;
   flex-direction: row;
 }
+
 .DataDiv {
   width: 100%;
   height: 100vh;
   padding: 10px;
   margin: 10px;
 }
+
 .generalInformation {
   display: flex;
 }
 
-.infoTable{
+.infoTable {
   margin: 20px;
   height: 10vh;
   width: 30%;
@@ -166,24 +188,28 @@ a {
   background-color: #339194;
   color: aliceblue;
 }
+
 .Last,
 .first {
   justify-content: center;
   width: 20%;
   align-items: center;
 }
+
 .middle {
   width: 60%;
   font-size: 13px;
   text-align: center;
   height: 100;
 }
+
 .Last {
   text-align: center;
   height: 100%;
   color: aliceblue;
   background-color: #777777;
 }
+
 .Last div {
   width: 100%;
   height: 50%;
@@ -198,11 +224,13 @@ a {
   width: 100%;
   height: 50vh;
 }
+
 .enrollment {
   width: 66%;
   border: 1px solid #339194;
   height: 90%;
 }
+
 .ninisDiv {
   font-size: 14px;
   width: 25%;
@@ -211,6 +239,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .ninis {
   width: 100%;
   height: 45%;
@@ -235,6 +264,7 @@ table {
   border: none;
   border-collapse: collapse;
 }
+
 thead {
   color: aliceblue;
   font-size: 0.8em;
@@ -242,11 +272,13 @@ thead {
   border: none;
   height: 3vh;
 }
+
 tr {
   border-top: 1px solid rgb(210, 210, 210);
   height: 4vh;
   text-align: center;
 }
+
 .uploadSection {
   display: flex;
   flex-direction: row;
@@ -260,9 +292,11 @@ tr {
   flex-direction: column;
   align-items: center;
 }
+
 .learner-form {
   width: 60%;
 }
+
 .choose-button {
   cursor: pointer;
   padding: 10px 20px;
@@ -282,6 +316,7 @@ tr {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
 .learner-form {
   /* max-width: 600px; */
   margin: 50px auto;
@@ -335,14 +370,17 @@ button {
   top: 18%;
   left: 50%;
 }
+
 .error {
   background-color: #f44336;
   color: white;
 }
+
 .success {
   background-color: #4caf50;
   color: white;
 }
+
 .close {
   float: right;
   font-weight: bold;

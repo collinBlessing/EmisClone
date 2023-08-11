@@ -10,10 +10,11 @@ from signin_signup import signup_urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', include(signin_urls)),
-    path('register/', include(signup_urls)),
+    path("", include(signin_urls)),
+    path("register/", include(signup_urls)),
     path("dashboard/", include(dashboard.urls)),
     path("emisdataupload/", include(dataupload.urls)),
+    path("logout/", include(signin_urls)),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
