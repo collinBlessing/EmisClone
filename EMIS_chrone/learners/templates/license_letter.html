@@ -1,0 +1,41 @@
+{% extends 'main.html' %} {% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>School Registration Letter</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/registration-letter.css' %}">
+    </head>
+
+    <body>
+        {% block content %}
+        <!-- <div class="registration-letter-container"> -->
+        <div class="letter-container">
+            <div class="header">
+                <img src="{% static 'images/school_logo.png' %}" alt="School Logo" width="100px" height="100px">
+                <h2>Registration Letter</h2>
+            </div>
+            <div class="content">
+                <p>Date: <i><b>{{ reg_date }}</b></i> </p>
+                <p><u><b>To whom it may concern,</b></u></p>
+                <p>We are pleased to inform you that <i><b>{{ school_name }}</b></i> has successfully registered for
+                    the upcoming
+                    academic year {{ academic_year }}.</p>
+                <p>This registration is a testament to our commitment to providing quality education and fostering a
+                    positive learning environment for our students.</p>
+                <p>We look forward to a productive and successful academic year ahead.</p>
+                <p>Sincerely,</p>
+                <p>NAHURIRA COLLIN BLESSING</p>
+                <p>Supervisor, {{ school_name }}</p>
+            </div>
+            <div class="signature">
+                <img src="{% static 'images/principal_signature.png' %}" alt="Principal Signature" width="150px"
+                    height="80px">
+            </div>
+        </div>
+        <!-- </div> -->
+        {% endblock %}
+        </div>
+    </body>
+
+</html>

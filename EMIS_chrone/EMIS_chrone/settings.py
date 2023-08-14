@@ -67,6 +67,7 @@ TEMPLATES = [
             BASE_DIR / "dataupload/templates",
             BASE_DIR / "templates",
             BASE_DIR / "staff_registration/templates",
+            BASE_DIR / "learners/templates",
         ],
         "APP_DIRS": True,
         "OPTIONS": {

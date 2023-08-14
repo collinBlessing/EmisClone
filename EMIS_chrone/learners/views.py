@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from datetime import date
 from dataupload.models import Learners
 from django.db.models import Q
 
@@ -14,6 +13,14 @@ def learners_view(request):
     }
 
     return render(request, "learners.html", context)
+
+
+# license view
+def license_view(request):
+    date = request.user.date_joined
+    school_name = request.user.Userschoolname
+    context = {"reg_date": date, "school_name": school_name, "academic_year": "2023"}
+    return render(request, "license_letter.html", context)
 
 
 # calculate age
