@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "dashboard.apps.DashboardConfig",
     "dataupload.apps.DatauploadConfig",
     "staff_registration.apps.StaffRegistrationConfig",
+    "learners.apps.LearnersConfig",
 ]
 
 MIDDLEWARE = [

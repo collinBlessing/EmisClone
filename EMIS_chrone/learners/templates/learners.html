@@ -1,0 +1,52 @@
+{% extends 'main.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMIS | learners</title>
+  </head>
+  <body>
+    {% block content %}
+
+    <div class="recentlyAddedLearners">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">LEARNER</th>
+            <th scope="col">LIN</th>
+            <th scope="col">NAME</th>
+            <th scope="col">DATE OF BIRTH</th>
+            <th scope="col">GENDER</th>
+            <th scope="col">NATIONALITY</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for learner in learnerFetch %}
+          <tr style="back ground-color: #b4e1f31e;font-size: 14px;height: 4vh;">
+            {% if learner.photo %}
+            <td><img src="{{learner.photo.url}}" width="40" /></td>
+            {% else %}
+            <td>
+              <img
+                src="{% static 'images/icons8-person-50.png' %}"
+                width="40"
+              />
+            </td>
+            {% endif %}
+            <td style="color: #00412ba8">{{learner.LIN}}</td>
+            <td>
+              {{learner.firstName}} {{learner.sirname}} {{learner.otherNames}}
+            </td>
+            <td>{{learner.dateOfBirth}}</td>
+            <td>{{learner.gender}}</td>
+            <td>{{learner.nationality}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>
