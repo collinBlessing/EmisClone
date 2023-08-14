@@ -1,14 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head5>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Institution Dashboard | Emis chrone</title>
-    <!-- <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" /> -->
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
-    <link rel="favicon" type="image/png" href="images/icons8-shield-60.png" />
-  </head5>
+    <link
+      rel="icon"
+      type="image/ico"
+      href="{% static 'images/favicon.ico' %}"
+    />
+  </head>
 
   <body>
     <header>
@@ -71,10 +74,12 @@
                 EMIS DATAUPLOAD
 
                 <ul class="sub-menu">
-                  <a href="/emisdataupload/">
+                  <a href="{% url 'emisdataupload' %}">
                     <li class="sub-item" id="employees">Learners</li>
                   </a>
-                  <li class="sub-item" id="students">Students</li>
+                  <a href="{% url 'staff_reg' %}">
+                    <li class="sub-item" id="students">Staff</li>
+                  </a>
                 </ul>
               </li>
             </ul>
@@ -235,12 +240,14 @@
             ACADEMIC YEAR 2023
           </div>
           <div class="Useraccount" style="width: 25%">
-            <div class="UseraccountDetailsInitials">AA</div>
+            <div class="UseraccountDetailsInitials">
+              {{user_firstname_init}}{{user_lastname_init}}
+            </div>
             <div class="UseraccountDetails">
               <span style="color: black">Contact Person Account</span>
               <br />
               <span style="color: rgb(0, 1, 56); font-weight: bold"
-                >{{username}}</span
+                >{{user_firstname}} {{user_lastname}}</span
               >
             </div>
             <a href="{% url 'logout' %}">
@@ -264,7 +271,6 @@
                   alt=""
                   height="40"
                 />
-                Logout
               </div>
             </a>
           </div>
@@ -274,7 +280,9 @@
           <div class="welcomeDiv">
             <!-- welcome note -->
             <div class="welcome">
-              <span style="font-size: 25px; font-weight: bold">Welcome !</span>
+              <span style="font-size: 25px; font-weight: bold"
+                >Hello {{user_firstname}} {{user_lastname}}</span
+              >
               <br /><br />
               A quick summmary of your Institution
             </div>
@@ -285,7 +293,7 @@
                 height="50%"
                 alt=""
               />
-              <a href="/emisdataupload/"> GO TO EMIS DATA UPLOAD </a>
+              <a href="{% url 'emisdataupload' %}"> GO TO EMIS DATA UPLOAD </a>
             </div>
             {% comment %} Child elements will override this block with their
             content {% endcomment %}

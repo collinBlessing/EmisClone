@@ -1,0 +1,69 @@
+{% extends 'main.html' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Details Form</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/staff_reg.css' %}" /> -->
+  </head>
+
+  <body>
+    {% block content %}
+
+    <div class="uploadSection">
+      <div class="learner-form">
+        <form action="{% url 'register_staff' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <!-- staff label -->
+          <h1>Staff Details Form</h1>
+          <!-- staff picture -->
+          <label for="picture">STAFF id photo:</label>
+          <input type="file" id="picture" name="picture" style="display: block" />
+          <!-- staff name -->
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required spellcheck="true" />
+          <!-- staff email -->
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required style="
+              display: block;
+              width: 97.5%;
+              height: 1.8vh;
+              padding: 10px;
+              font-size: 1em;
+              background-color: #e5eef7;
+              margin-bottom: 15px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            " />
+
+          <label for="role">Gemder:</label>
+          <!-- select and options -->
+          <select id="role" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <!-- staff role -->
+          <label for="role">Role:</label>
+          <!-- select and options -->
+          <select id="role" name="role" required>
+            <option value="non_staff">Non-Staff</option>
+            <option value="teaching_staff">Teaching Staff</option>
+          </select>
+          <!-- Department -->
+          <label for="department">Department:</label>
+          <input type="text" id="department" name="department" required />
+          <!-- Qualification -->
+          <label for="qualification">Qualification:</label>
+          <input type="text" id="qualification" name="qualification" required />
+          <!-- submit button -->
+          <input type="submit" value="Submit"
+            style="padding: 10px;background-color: #1c8b00;color: aliceblue;border: none;border-radius: 5px;cursor: pointer;" />
+        </form>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+
+</html>

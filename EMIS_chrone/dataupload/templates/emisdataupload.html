@@ -6,7 +6,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% comment %} TITLE {% endcomment %}
     <title>EMIS Dataupload | Emis chrone</title>
   </head>
 
@@ -20,7 +19,7 @@
         <div class="learner-form">
 
           {% comment %}FORM FOR SUBMISSION {% endcomment %}
-          <form method="POST" action="{% url 'upload_data' %}" enctype="multipart/form-data">
+          <form method="POST" action="{% url 'emisdataupload' %}" enctype="multipart/form-data">
             {% csrf_token %}
 
             {% comment %} PREVIEW IMAGE {% endcomment %}

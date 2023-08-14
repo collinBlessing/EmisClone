@@ -3,15 +3,15 @@ from django.shortcuts import render
 from .models import Learners
 from django.contrib import messages
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
+from dashboard.views import fetch_data
 
 # Create your views here.
 
 
+@login_required
 def emisdataupload(request):
-    username_for_login_personel = request.session.get("data_pass_username")
-    return render(
-        request, "emisdataupload.html", {"username": username_for_login_personel}
-    )
+    return render(request, "emisdataupload.html", fetch_data(request))
 
 
 # Generate student lin number
@@ -76,5 +76,4 @@ def UploadData(request):
             messages.error(request, "could not find user")
 
     else:
-        messages.error(request, "An Error occured while submitting data")
         return render(request, "emisdataupload.html")

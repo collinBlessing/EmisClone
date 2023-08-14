@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "signin_signup.apps.SigninSignupConfig",
     "dashboard.apps.DashboardConfig",
     "dataupload.apps.DatauploadConfig",
+    "staff_registration.apps.StaffRegistrationConfig",
 ]
 
 MIDDLEWARE = [
@@ -51,7 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "signin_signup.middleware.logoutmiddleware"
+    "signin_signup.middleware.logoutmiddleware",
 ]
 
 ROOT_URLCONF = "EMIS_chrone.urls"
@@ -64,6 +65,7 @@ TEMPLATES = [
             BASE_DIR / "dashboard/templates",
             BASE_DIR / "dataupload/templates",
             BASE_DIR / "templates",
+            BASE_DIR / "staff_registration/templates",
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -140,5 +142,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # direct django to point into my custom user model
 AUTH_USER_MODEL = "signin_signup.School_register"
-
-
