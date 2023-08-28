@@ -2,7 +2,7 @@
 
 usage of EMISChrone
 
-# EMIS Chrone Project
+# EMIS Chrone Project by NAHURIRA COLLIN BLESSING 2021bcs052ps
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@ usage of EMISChrone
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#lincense)
+- [License](#license)
 - [Ownership](#ownership)
 
 ## Introduction
@@ -147,49 +147,43 @@ To run the EMIS Chrone Django project locally, follow these steps:
 1. **Clone the Repository:** Use the following command to clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/emis-chrone-django.git
+   git clone https://github.com/collinBlessing/EmisChrone.git
    ```
 
 2. **Navigate to the Project Directory:** Move into the project directory using the `cd` command:
 
    ```bash
-   cd emis-chrone-django
+   cd EmisChrone
    ```
 
 3. **Create a Virtual Environment:** It's recommended to use a virtual environment for the project. Create and activate a virtual environment:
 
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+   pipenv install django
+   pip shell      # On Windows, use: venv\Scripts\activate
    ```
 
-4. **Install Dependencies:** Install the project dependencies using the following command:
+4. **Set Up the Database:** Configure your database settings in the project's `settings.py` file.
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-5. **Set Up the Database:** Configure your database settings in the project's `settings.py` file.
-
-6. **Run Migrations:** Apply the database migrations to set up the initial database structure:
+5. **Run Migrations:** Apply the database migrations to set up the initial database structure:
 
    ```bash
    python manage.py migrate
    ```
 
-7. **Create Superuser:** Create a superuser account to access the admin panel:
+6. **Create Superuser:** Create a superuser account to access the admin panel:
 
    ```bash
    python manage.py createsuperuser
    ```
 
-8. **Run the Development Server:** Start the Django development server:
+7. **Run the Development Server:** Start the Django development server:
 
    ```bash
    python manage.py runserver
    ```
 
-9. **Access the Application:** Open your web browser and navigate to `http://localhost:8000` to access the EMIS Chrone application.
+8. **Access the Application:** Open your web browser and navigate to `http://localhost:8000` to access the EMIS Chrone application.
 
 ## Usage
 
@@ -221,9 +215,7 @@ Contributions to the EMIS Chrone Django project are welcome! To contribute:
 
 5. Create a pull request to the main repository's `main` branch.
 
-## Lincense
-
-This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the code as per the terms of the license.
+## License
 
 For questions or assistance, contact the project maintainers or open an issue in the repository.
 
@@ -233,5 +225,7 @@ Thank you for using EMIS Chrone Django!
 
 ## Ownership
 
-This project was created for **education purposes** only . It was created for a project presentation at MBARARA UNIVERSITY OF SCIENCE AND TECHNOLOGY by
-NAHURIRA COLLIN BLESSING Registration Number 2021/BCS/052/PS
+This project was created for **education purposes** only .
+It was created for a project presentation at **MBARARA UNIVERSITY OF SCIENCE AND TECHNOLOGY** by
+**NAHURIRA COLLIN BLESSING**
+Registration Number **2021/BCS/052/PS**
