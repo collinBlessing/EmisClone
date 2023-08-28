@@ -1,7 +1,5 @@
 # EmisChrone
 
-usage of EMISChrone
-
 # EMIS Chrone Project by NAHURIRA COLLIN BLESSING 2021bcs052ps
 
 ## Table of Contents
