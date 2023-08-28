@@ -2,18 +2,19 @@
 
 usage of EMISChrone
 
-# EMIS Chrone Project - Read Me
+# EMIS Chrone Project
 
 ## Table of Contents
 
-- [Introduction]
-- [Features]
-- [Installation]
-- [Usage]
-- [Contributing]
-- [License]
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#lincense)
+- [Ownership](#ownership)
 
-# [introduction]: #introduction
+## Introduction
 
 # EMIS Chrone Django Project - Detailed Introduction
 
@@ -55,7 +56,7 @@ Thank you for your interest in the EMIS Chrone Django project. We invite you to 
 
 ---
 
-# [Features]: #Features
+## Features
 
 # EMIS Chrone Django Project - Detailed Features
 
@@ -139,7 +140,7 @@ Feel free to explore the application, contribute to its development, and experie
 
 ---
 
-# [Installation]: #Installation
+## Installation
 
 To run the EMIS Chrone Django project locally, follow these steps:
 
@@ -190,7 +191,7 @@ To run the EMIS Chrone Django project locally, follow these steps:
 
 9. **Access the Application:** Open your web browser and navigate to `http://localhost:8000` to access the EMIS Chrone application.
 
-# [Usage]: #Usage
+## Usage
 
 Once the application is up and running, follow these steps to utilize its features:
 
@@ -202,7 +203,7 @@ Once the application is up and running, follow these steps to utilize its featur
 
 4. **Staff Data:** Similarly, the staff management section allows you to manage staff information, including uploading new records and making updates.
 
-# [Contributing]: #Contributing
+## Contributing
 
 Contributions to the EMIS Chrone Django project are welcome! To contribute:
 
@@ -220,7 +221,7 @@ Contributions to the EMIS Chrone Django project are welcome! To contribute:
 
 5. Create a pull request to the main repository's `main` branch.
 
-# [License]: #Lincense
+## Lincense
 
 This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the code as per the terms of the license.
 
@@ -229,3 +230,8 @@ For questions or assistance, contact the project maintainers or open an issue in
 Thank you for using EMIS Chrone Django!
 
 ---
+
+## Ownership
+
+This project was created for **education purposes** only . It was created for a project presentation at MBARARA UNIVERSITY OF SCIENCE AND TECHNOLOGY by
+NAHURIRA COLLIN BLESSING Registration Number 2021/BCS/052/PS
